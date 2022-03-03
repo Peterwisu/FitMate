@@ -37,14 +37,15 @@ class ReplyController extends Controller
     {
         $replies =Replies::create([
 
-         
+            
             'content'=>$request->input('content'),
             'comment_id'=>$request->input('comment_id'),
             'user_id'=>auth()->user()->id
         ]);
 
+
+        //get a post_id of a post to redirect page back to that post
         $comment = $request->comment_id;
-        
         $post_id = Comment::find( $comment)->post_id;
         
         return redirect('/posts/'.$post_id);
@@ -84,14 +85,11 @@ class ReplyController extends Controller
         
 
         $reply = Replies::where('id',$id)->update([
-
-        
             "content"=>$request->input('content')
         ]);
 
-        
+        //get a post_id of a post to redirect page back to that post
         $comment_id = Replies::find($id)->comment_id;
-       
         $post_id = Comment::find($comment_id)->post_id;
         
         return redirect('/posts/'.$post_id);
@@ -107,10 +105,9 @@ class ReplyController extends Controller
     public function destroy($id)
     {
         $reply = Replies::find($id);
-
         $reply->delete();
 
-        
+        //get a post_id of a post to redirect page back to that post
         $comment = $reply->comment_id;
         $post_id = Comment::find( $comment)->post_id;
         

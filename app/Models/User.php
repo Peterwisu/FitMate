@@ -43,17 +43,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    //This Post can has many Post  (one to many)
     public function Post(){
 
 
         return $this->hasMany(Post::class);
     }
+    //This Post can has many comment  (one to many)
     public function Comment(){
 
 
         return $this->hasMany(Comment::class);
     }
+    //This Post can has many reply  (one to many)
     public function Replies(){
 
 

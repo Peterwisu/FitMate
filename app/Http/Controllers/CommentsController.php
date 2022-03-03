@@ -42,7 +42,7 @@ class CommentsController extends Controller
             'post_id'=>$request->input('post_id'),
             'user_id'=>auth()->user()->id
         ]);
-
+        //get a post_id of a post to redirect page back to that post
         $post =$request->post_id;
         return redirect('/posts/'.$post);
     }
@@ -91,7 +91,7 @@ class CommentsController extends Controller
 
         
         
-
+        //get a post_id of a post to redirect page back to that post
         $post_id = Comment::find($id)->post_id;
         
 
@@ -111,7 +111,7 @@ class CommentsController extends Controller
         $comment->delete();
 
         
-
+        //get a post_id of a post to redirect page back to that post
         $post_id=$comment->post_id;
 
         return redirect('/posts/'.$post_id);

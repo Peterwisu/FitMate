@@ -17,13 +17,15 @@ class Post extends Model
 
     protected $fillable = ['name','content','user_id'];
 
-
+    
+    
+    //This Post can has many comment  (one to many)
     public function PostComment(){
 
 
         return $this->hasMany(Comment::class);
     }
-
+    //This Post can only belong to one User(many to one)
     public function User(){
 
         return $this->belongsTo(User::class);

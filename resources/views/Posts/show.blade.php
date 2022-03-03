@@ -7,14 +7,14 @@
 
         <br>
         <h1 class="position-absolute bottom-40 start-50 translate-middle-x">
-            {{ $post->name }}</h1>
+            {{ $post->name/* show name of the post*/ }}</h1>
         <br>
         <br>
         <br>
-        <h3>{{$post->User->name}}</h3>
-        <p> at: {{$post->created_at}}</p>
+        <h3>{{$post->User->name /* show name of the user who post*/}}</h3>
+        <p> at: {{$post->created_at/* show time of the post create*/}}</p>
         <div class="row">
-            @if(isset(Auth::user()->id)&&Auth::user()->id == $post->user_id)
+            @if(isset(Auth::user()->id)&&Auth::user()->id == $post->user_id){{/* If user login and if user id is sam as a  user_id in post show content*/}}
             <div class="col">
                 <a href="/posts/{{ $post->id }}/edit">
                     Edit {{ $post->name }} &rarr;
@@ -68,7 +68,7 @@
 
 
 
-        @forelse ($post->PostComment as $comment)
+        @forelse ($post->PostComment as $comment /* Loop through all comment*/)
             <div class="card mb-4">
 
                 <div class="card-body">
@@ -83,7 +83,7 @@
                         </div>
 
                         <div class="d-flex flex-row align-items-center">
-                            @if(isset(Auth::user()->id)&&Auth::user()->id == $comment->user_id)
+                            @if(isset(Auth::user()->id)&&Auth::user()->id == $comment->user_id/* If user login and if user_id is sam as a user_id in commnet show content*/)
                             <form action="/comment/{{ $comment->id }}" method="POST">
                                 @csrf
                                 @method('delete')
@@ -262,28 +262,25 @@
     
 
     <script>
+    
+
+    //show form for editing comment in web pages
     function OpenEdit(id){
 
         $("#EditCommentForm"+id).toggle();
     }   
 
+    //show form for creating reply in web pages
     function OpenNewReply(id){
         $("#AddReplyForm"+id).toggle();
     }
 
+    //show form for editing reply in web pages
     function ReplyEdit(id){
         $("#EditReply"+id).toggle();
     }
 
     $(document).ready(function(){
-
-
-       
-        
-
-        
-
-
 
          
    })

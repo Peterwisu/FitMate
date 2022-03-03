@@ -9,6 +9,7 @@ class PostController extends Controller
 {
 
     public function __construct (){
+        // set a page that can not be access without login and can without login
         $this->middleware('auth',['except'=>['index','show']]);
     }
 
@@ -64,12 +65,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
+
         $post = Post::find($id);
-       
-        $user = User::find($post->user_id);
-
         
-
         return view("Posts.show")->with('post',$post);
     }
 
