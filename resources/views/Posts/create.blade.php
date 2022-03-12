@@ -37,7 +37,8 @@
                     </div>
                     <div class="mb-3 row">
 
-                        <input type="text" class="form-control" id="inputContent" name="content">
+                       <!--- <input type="text" class="form-control" id="inputContent" name="content"> ---->
+                        <textarea class="form-control" id="inputContent" name="content" rows="3"></textarea>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-dark form-control">Submit</button>

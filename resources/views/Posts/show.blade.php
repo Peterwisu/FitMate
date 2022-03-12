@@ -14,6 +14,7 @@
         <h3>{{$post->User->name /* show name of the user who post*/}}</h3>
         <p> at: {{$post->created_at/* show time of the post create*/}}</p>
         <div class="row">
+            <!------ If user login and if user id is sam as a user_id in post show content---->
             @if(isset(Auth::user()->id)&&Auth::user()->id == $post->user_id)
             <div class="col">
                 <a href="/posts/{{ $post->id }}/edit">
@@ -92,14 +93,14 @@
                             </form>
 
 
-                            <button type="button" class="btn btn-body"
+                            <button type="button" class="btn btn-body "
                                 onclick=" OpenEdit({{ $comment->id}}) ">Edit</button>
 
 
 
 
                             @endif
-                            <button type="button" onclick="OpenNewReply({{$comment->id}})" class="btn btn-body">Reply</button>
+                            <button type="button" onclick="OpenNewReply({{$comment->id}})" class="btn btn-body ">Reply</button>
 
                         </div>
                         
@@ -115,7 +116,8 @@
                             </div>
                             <div class="mb-3 row">
                                 <input type="hidden" class="form-control"  name="id" value="{{$comment->id}}">
-                                <input type="text" class="form-control"  name="content" value="{{$comment->content}}">
+                                
+                                <textarea class="form-control"  name="content" rows="5"></textarea>
                             </div>
                             <div >
                                 <button type="submit" class="btn btn-dark form-control" >Edit Comment</button>
@@ -135,7 +137,7 @@
                             </div>
                             <div class="mb-3 row">
                                 <input type="hidden" class="form-control"  name="comment_id" value="{{$comment->id}}">
-                                <input type="text" class="form-control"  name="content" value="">
+                                <textarea class="form-control"  name="content" rows="5"></textarea>
                             </div>
                             <div >
                                 <button type="submit" class="btn btn-dark form-control" >Reply Comment</button>
@@ -167,9 +169,10 @@
                                            
                                             <button type="submit" class="btn btn-body ">&larr;delete</button>
                                         </form>
-                                        @endif
                                         <button type="button" class="btn btn-body" onclick=" ReplyEdit({{ $reply->id}}) ">Edit</button>
 
+                                        @endif
+                                        
                                     </div>
                                     
                                 </div>
@@ -239,7 +242,8 @@
 
                         <div class="mb-3 row">
                             <input type="hidden" class="form-control"  name="post_id"  value="{{ $post->id }}">
-                            <input type="text" class="form-control"  name="content">
+                            
+                            <textarea class="form-control"  name="content" rows="5"></textarea>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-dark form-control">Comment</button>
@@ -263,10 +267,12 @@
 
     <script>
     
-
+    
+    });
     //show form for editing comment in web pages
     function OpenEdit(id){
 
+     
         $("#EditCommentForm"+id).toggle();
     }   
 
