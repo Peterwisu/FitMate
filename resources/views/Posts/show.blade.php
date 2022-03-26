@@ -14,13 +14,10 @@
                             {{ $post->name }}
                         </h1>
                         <div class="mt-3 d-block mx-auto bg-dark rounded-circle" style="height: 50px; width: 50px;">
-
-
+                            
                         </div>
                         <div class="mt-3 d-block mx-auto d-flex align-content-center justify-content-center flex-column"
                             style="height: 50px; width: 50px;">
-
-
                         </div>
                         <h4 class="text-center mt-2">
                             {{ $post->User->name }}
@@ -28,11 +25,7 @@
                         <p class="text-center">
                             at: {{ $post->created_at }}
                         </p>
-
-
                     </div>
-
-
                 </div>
                 <div class="col-md-3"></div>
 
@@ -44,8 +37,8 @@
                 </h2>
             </div>
             <div class="row">
-                <!------ If user login and if user id is sam as a user_id in post show content---->
-                @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                <!------ If user login and if user id is same as a user_id in post show content---->
+                @if (auth()->check() && Auth::user()->id == $post->user_id)
                     <div class="col">
                         <a href="/posts/{{ $post->id }}/edit">
                             Edit {{ $post->name }} &rarr;
@@ -89,11 +82,17 @@
     </script>
     <script>
         $(document).ready(function() {
+            
             const post_id = {{ $post->id }};
+            // get URL of cuurent web page
             const url = document.querySelector('meta[name="base_url"]').content
+            // get crsf_toke
             const csrf_token = document.querySelector('meta[name="csrf-token"]').content
             $('#add-comment-button-ajax').click(function(e) {
+
+                // prevent web page refresh
                 e.preventDefault();
+
                 $.ajax({
                     url: `/comment`,
                     method: "POST",
@@ -115,8 +114,10 @@
                     },
                     success: function(r) {
                         console.log('Ajax add comment success');
+
+                        // Remove a div containig message no comment for post
                         $('#NoComment').remove();
-                        
+                        // Append New comment
                         $("#loop-comment").append(`
                         <div class="card mb-4">
                             <div class="card body ">

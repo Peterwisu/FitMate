@@ -11,7 +11,7 @@
 
             </div>
             <div class="row">
-                @if (Auth::user())
+                @if (auth()->check())
                 <div class="col-md-8">
 
                     <button type="button" class="btn btn-dark">
