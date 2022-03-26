@@ -35,8 +35,9 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-
+        // Set replies_id = null and only assign value to it if is a reply ***replies_id contain comment_id post that get reply****
         $replies_id = null;
+        // 1 mean it is a reply
         if($request->is_reply==1){
             $replies_id = $request->replies_id;
         }
@@ -50,17 +51,17 @@ class CommentsController extends Controller
         'replies_id' => $replies_id,
         'user_id'=>auth()->user()->id
          ]);
-         //get a post_id of a post to redirect page back to that post
-         $post =$request->post_id;
-         $response = array(
-            'status' => 'success',
-            'msg' => 'Setting created successfully',
-        );
+        
+
 
         if($request->is_reply==1){
+
+            // redirect back when adding reply            
             return redirect('/posts/'.$post);
         }
         else{
+
+         // Return Ajax Response when adding new comment
          return response()->json([
              'username'=>$comment->User->name,
              'create_at'=>$comment->created_at,
@@ -131,7 +132,7 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        $comment = Comment::find($id); //<- can be done by this way as well by cahnging parameter to $id
+        $comment = Comment::find($id); 
 
         $comment->delete();
 

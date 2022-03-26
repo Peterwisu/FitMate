@@ -113,7 +113,7 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id); //<- can be done by this way as well by cahnging parameter to $id
+        $post = Post::find($id); 
 
         $post->delete();
 
