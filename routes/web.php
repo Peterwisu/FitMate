@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,10 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/',[PagesController::class,'index']);
-Route::get('/about',[PagesController::class,'about']);
-Route::get('/contact',[PagesController::class,'contact']);
+Route::get('/',[HomeController::class,'index']);
+Route::get('/about',[HomeController::class,'about']);
+Route::get('/contact',[HomeController::class,'contact']);
+Route::get('/find',[HomeController::class,'find']);
 
 
 Route::resource('/posts',PostController::class);
@@ -31,3 +33,5 @@ Route::resource('/replies',ReplyController::class);
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Route::post('/comment',[CommentsController::class,'store']);

@@ -5,32 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class comment extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-
     protected $table = 'comments';
 
-    protected $primarykeys ='id';
+    protected $primarykeys = 'id';
 
     public $timestamps = true;
 
-    protected $fillable = ['content','post_id','user_id'];
+    protected $fillable = ['content','replies_id','user_id','is_reply','post_id'];
 
-    //This comment can only belong to one Post (many to one)
+
+
     public function Post(){
-
-        return $this->belongsTo(Post::class);
-    }
-    //This comment can has many reply to  (one to many)
-    public function CommentReplies(){
-
-
-        return $this->hasMany(Replies::class);
+        
+        return $this->belongto(Post::class);
     }
 
-    //This comment can only belong to one User(many to one)
+   
+    public function getreplies($commentID){
+
+        // return $this->hasMany(Comment::class)->where('is_reply',true)
+        return Comment::where('replies_id', $commentID)->get();
+    }
+
     public function User(){
 
         return $this->belongsTo(User::class);

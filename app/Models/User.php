@@ -49,16 +49,5 @@ class User extends Authenticatable
 
         return $this->hasMany(Post::class);
     }
-    //This Post can has many comment  (one to many)
-    public function Comment(){
-
-
-        return $this->hasMany(Comment::class);
-    }
-    //This Post can has many reply  (one to many)
-    public function Replies(){
-
-
-        return $this->hasMany(Replies::class);
-    }
+    
 }

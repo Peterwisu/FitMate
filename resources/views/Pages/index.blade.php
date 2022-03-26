@@ -8,7 +8,7 @@
                 <div class="col-md-8 " style="height: 500">
                     <div class="row mb-5" style="height: 500px">
                         
-                        <h1 class="mt-5">Welcome to our Web app</h1>
+                        <h1 class="mt-5 ">Welcome to our FitMate</h1>
                         <div class="col">
                             <button type="button" class="btn btn-dark">
 
@@ -29,10 +29,10 @@
             <div class="text-center">
                 <div class="row mb-4">
                     <div class="col">
-                        <button type="button" class="btn btn-secondary">Login</button>
+                        <button type="button" class="btn btn-dark">Login</button>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn btn-secondary">Register</button>
+                        <button type="button" class="btn btn-dark">Register</button>
                     </div>
 
                 </div>

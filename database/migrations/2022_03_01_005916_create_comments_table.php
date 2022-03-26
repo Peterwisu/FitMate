@@ -19,6 +19,8 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedInteger('post_id');
             $table->longText('content');
+            $table->unsignedInteger('replies_id')->nullable();
+            $table->boolean('is_reply');
             $table->timestamps();
             $table->foreign('post_id')
                   ->references("id")

@@ -14,8 +14,8 @@
                 @if (Auth::user())
                 <div class="col-md-8">
 
-                    <button type="button" class="btn btn-secondary">
-                        <a href="posts/create" style="color: aliceblue">
+                    <button type="button" class="btn btn-dark">
+                        <a href="/posts/create" style="color: aliceblue">
                             Add New Post
                         </a>
                     </button>
@@ -38,6 +38,7 @@
 
 
                 @forelse($posts as $post)
+                <div class="mt-3 mb-5">
                     <h2>
                         <a href="/posts/{{ $post->id }}">
 
@@ -55,6 +56,7 @@
 
 
                     <hr>
+                </div>
                 @empty
 
                     <h3>

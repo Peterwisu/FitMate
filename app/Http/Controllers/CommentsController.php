@@ -35,16 +35,43 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        $commnet =Comment::create([
 
-         
-            'content'=>$request->input('content'),
-            'post_id'=>$request->input('post_id'),
-            'user_id'=>auth()->user()->id
-        ]);
-        //get a post_id of a post to redirect page back to that post
-        $post =$request->post_id;
-        return redirect('/posts/'.$post);
+        $replies_id = null;
+        if($request->is_reply==1){
+            $replies_id = $request->replies_id;
+        }
+            
+      
+        
+         $comment =Comment::create([
+        'content'=>$request->input('content'),
+        'post_id'=>$request->input('post_id'),
+        'is_reply'=>$request->input('is_reply'),
+        'replies_id' => $replies_id,
+        'user_id'=>auth()->user()->id
+         ]);
+         //get a post_id of a post to redirect page back to that post
+         $post =$request->post_id;
+         $response = array(
+            'status' => 'success',
+            'msg' => 'Setting created successfully',
+        );
+
+        if($request->is_reply==1){
+            return redirect('/posts/'.$post);
+        }
+        else{
+         return response()->json([
+             'username'=>$comment->User->name,
+             'create_at'=>$comment->created_at,
+             'content'=> $comment->content,
+             'user_id'=>$comment->user_id,
+             'id'=>$comment->id,    
+         ]);
+        }
+            
+
+
     }
 
     /**
@@ -93,8 +120,6 @@ class CommentsController extends Controller
         
         //get a post_id of a post to redirect page back to that post
         $post_id = Comment::find($id)->post_id;
-        
-
         return redirect('/posts/'.$post_id);
     }
 
