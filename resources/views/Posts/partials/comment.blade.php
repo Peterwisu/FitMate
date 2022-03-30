@@ -27,9 +27,12 @@
                                     <button type="button" class="btn btn-body "
                                         onclick=" OpenEdit({{ $comment->id }}) ">Edit</button>
                                 @endif
-                                <!----Button toggle form for Add reply to comment --->
-                                <button type="button" onclick="OpenNewReply({{ $comment->id }})"
+                                <!--- if user is login show reply button ---->
+                                @if (auth()->check())
+                                    <!----Button toggle form for Add reply to comment --->
+                                    <button type="button" onclick="OpenNewReply({{ $comment->id }})"
                                     class="btn btn-body ">Reply</button>
+                                @endif
                             </div>
 
                         </div>

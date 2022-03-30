@@ -10,7 +10,7 @@
 
                     <div class="card-body text-center">
 
-                        <div class="row mb-4">
+                        <div class="row mb-4 mt-4">
                             <h1 class="">Contact Us </h1>
                         </div>
 
