@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentsController;
-use App\Http\Controllers\ReplyController;
+
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,13 +20,25 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/about',[HomeController::class,'about']);
-Route::get('/contact',[HomeController::class,'contact']);
+
+
+
+/**-------------   Contact page ----------------------------- */
+Route::get('/contact',[ContactFormController::class,'create']);
+//post request to send an contact email
+Route::post('/contact',[ContactFormController::class,'store']);
+// respond page after the email send will redirect to this page
+Route::get('/contact/respond',[ContactFormController::class,'respond']);
+
+
+
+/**  Google map api */
 Route::get('/find',[HomeController::class,'find']);
 
 
 Route::resource('/posts',PostController::class);
 Route::resource('/comment',CommentsController::class);
-Route::resource('/replies',ReplyController::class);
+
 
 
 

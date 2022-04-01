@@ -53,7 +53,7 @@ class CommentsController extends Controller
          ]);
         
 
-
+         $post = $request->input('post_id');
         if($request->is_reply==1){
 
             // redirect back when adding reply            
