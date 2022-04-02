@@ -15,14 +15,14 @@
 
 
 
-        <div class="row mt-5 mb-5">
+        <div class="row mt-5 mb-5 ">
 
             <div class="col-2"></div>
             <div class="col-8 ">
 
-                <div class="row mt-4 mb-4">
-                    <div class="col">Name:</div>
-                    <div class="col"> {{ $profile->title}} {{Auth::user()->name}}</div>
+                <div class="row mt-4 mb-4 ">
+                    <div class="col ">Name:</div>
+                    <div class="col "> {{ $profile->title}} {{Auth::user()->name}}</div>
                 </div>
 
 
@@ -77,15 +77,14 @@
                     <div class="col"> {{ $profile->date_of_birth}} </div>
                     @endif
                 </div>
-
-                {{dd(date())}}
+               
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Age:</div>
                     @if($profile->date_of_birth == null)
                     <div class="col"> No infomation </div>
                     @else
-                    <div class="col"> {{ $profile->date_of_birth}} </div>
+                    <div class="col"> {{ (date_diff(date_create($profile->date_of_birth), date_create(date("Y-m-d"))))->format('%y')}} </div>
                     @endif
                 </div>
 
@@ -144,6 +143,20 @@
            
 
 
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8  d-flex align-content-center justify-content-center"> 
+            
+
+                <button class="btn btn-dark" >
+                    <a href="/profile/{{$profile->id}}/edit" style="color: aliceblue">Edit Your Profile</a>
+                </button>
+                
+
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </div>
 

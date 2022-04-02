@@ -38,12 +38,21 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
 
-        // dd(auth()->user()->id);
-        $profile = Profile::create([
 
+
+
+        // dd(auth()->user()->id);
+
+
+        $data = request()->validate([
+            // Validation for date of birth
+            'DateOfBirth'    => 'nullable|date_format:Y-m-d|before:today',
+        
+        ]);
+        $profile = Profile::create([
             'title'=>$request->input('title'),
             'gender'=>$request->input('gender'),
-            'date_of_birth'=>$request->input('DOB'),
+            'date_of_birth'=>$request->input('DateOfBirth'),
             'height'=>$request->input('height'),
             'weight'=>$request->input('weight'),
             'neck'=>$request->input('neck'),
@@ -84,7 +93,10 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $profile = Profile::find($id);
+
+       
+        return view('profile.edit')->with('profile',$profile);
     }
 
     /**
@@ -96,7 +108,24 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = request()->validate([
+            // Validation for date of birth
+            'DateOfBirth'    => 'nullable|date_format:Y-m-d|before:today',
+        
+        ]);
+        $profile = Profile::where('id',$id)->update([
+            'title'=>$request->input('title'),
+            'gender'=>$request->input('gender'),
+            'date_of_birth'=>$request->input('DateOfBirth'),
+            'height'=>$request->input('height'),
+            'weight'=>$request->input('weight'),
+            'neck'=>$request->input('neck'),
+            'waist'=>$request->input('waist'),
+            'id'=>auth()->user()->id
+        ]);
+        
+
+        return redirect('/profile/'.$id);
     }
 
     /**

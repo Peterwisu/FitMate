@@ -19,19 +19,19 @@
                     <div class="col-md-8 mt-4 align-content-center justify-content-center">
 
                         <div class="row mb-4">
-                                <div class="col-6">
-                                    <label class=""> Name</label>
-                                </div>
-                                <div class="col-6">
-                                    <label class=""> {{Auth::user()->name}}</label>
-                                </div>
+                            <div class="col-6">
+                                <label class=""> Name</label>
+                            </div>
+                            <div class="col-6">
+                                <label class=""> {{ Auth::user()->name }}</label>
+                            </div>
                         </div>
                         <div class="row mb-4">
                             <div class="col-6">
                                 <label class=""> Name</label>
                             </div>
                             <div class="col-6">
-                                <label class=""> {{Auth::user()->email}}</label>
+                                <label class=""> {{ Auth::user()->email }}</label>
                             </div>
                         </div>
 
@@ -46,17 +46,17 @@
                                     <label class=""> Title</label>
                                 </div>
                                 <div class="col-6">
-                                    
 
-                                        <select class="form-control form-control-lg" name="title">
-                                            <option selected value=''>select Your Title</option>    
-                                            <option value="Mr.">Mr.</option>
-                                            <option value="Mrs.">Mrs.</option>
-                                            <option value="Ms.">Ms.</option>
-                                            <option value="Dr.">Dr.</option>
-                                            <option value="Prof.">Prof.</option>
-                                        </select>
-                                   
+
+                                    <select class="form-control form-control-lg" name="title">
+                                        <option selected value=''>select Your Title</option>
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Ms.">Ms.</option>
+                                        <option value="Dr.">Dr.</option>
+                                        <option value="Prof.">Prof.</option>
+                                    </select>
+
                                 </div>
                             </div>
 
@@ -67,10 +67,10 @@
                                 </div>
                                 <div class="col-6">
                                     <select class="form-control form-control-lg" name="gender">
-                                        <option selected value='' >select Your Gender</option>    
+                                        <option selected value=''>select Your Gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
-                                    
+
                                     </select>
                                 </div>
                             </div>
@@ -83,8 +83,8 @@
                                     <label class=""> Date of birth</label>
                                 </div>
                                 <div class="col-6">
-                           
-                                    <input  class="form-control"type="date" name="DOB">
+
+                                    <input class="form-control" type="date" name="DateOfBirth">
                                 </div>
                             </div>
 
@@ -96,7 +96,8 @@
                                     <label class=""> Height</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" class="form-control" placeholder="Your height in CM" name='height'>
+                                    <input type="number" class="form-control" placeholder="Your height in CM"
+                                        name='height'>
                                 </div>
                             </div>
 
@@ -106,7 +107,8 @@
                                     <label class=""> Weight</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" placeholder="Your weight in Kg" class="form-control" name="weight">
+                                    <input type="number" placeholder="Your weight in Kg" class="form-control"
+                                        name="weight">
                                 </div>
                             </div>
 
@@ -125,7 +127,7 @@
                                     <label class=""> Waist</label>
                                 </div>
                                 <div class="col-6">
-                                    <input type="number" placeholder="Your waist in CM"class="form-control" name="waist">
+                                    <input type="number" placeholder="Your waist in CM" class="form-control" name="waist">
                                 </div>
                             </div>
 
@@ -142,9 +144,21 @@
 
                     </div>
                     <div class="col-md-2"></div>
-                    <div>
+                </div>
+            </div>
+        </div>
 
-
-
+        <!---- display error message from server side validation --->
+        @if ($errors->any())
+            <div class=" mt-5" role="alert">
+                @foreach ($errors->all() as $err)
+                    <div class="alert alert-danger mt-2" role="alert">
+                        <li> {{ $err }}</li>
                     </div>
-                @endsection
+                @endforeach
+            </div>
+        @endif
+
+
+    </div>
+@endsection
