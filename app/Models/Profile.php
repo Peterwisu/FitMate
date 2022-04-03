@@ -19,6 +19,7 @@ class Profile extends Model
     protected $fillable = ['id','title','gender','date_of_birth','height','weight','neck','waist'];
 
 
+    // This profile belong to only one User
     public function User(){
 
         return $this->belongsTo(User::class);

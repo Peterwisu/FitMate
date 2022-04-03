@@ -13,21 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('healths', function (Blueprint $table) {
             $table->id();
-            $table->enum('title', ['Mr.', 'Mrs.', 'Ms.','Dr.','Prof.']);
-            $table->enum('gender',['male','female']);
-            $table->date('date_of_birth');
-            $table->unsignedInteger('height');
-            $table->unsignedInteger('weight');
-            $table->unsignedInteger('neck');
-            $table->unsignedInteger('waist');
+            $table->unsignedInteger('bmi');
+            $table->unsignedInteger('bfp');
+            $table->longText('bmi_cat');
+            $table->longText('bfp_cat');
             $table->timestamps();
             $table->foreign('id')
             ->references("id")
-            ->on('users')
+            ->on('profiles')
             ->onDelete('cascade');
         });
+        
     }
 
     /**
@@ -37,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profiles');
+        Schema::dropIfExists('healths');
     }
 };

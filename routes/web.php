@@ -8,6 +8,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HealthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +37,8 @@ Route::get('/contact/respond',[ContactFormController::class,'respond']);
 /**------------------------ Profile pages ------------------------- */
 Route::resource('/profile',ProfileController::class);
 
+/**---------------------------Health pages ------------------------ */
+Route::resource('/health',HealthController::class);
 
 
 Route::resource('/posts',PostController::class);

@@ -142,4 +142,10 @@ class CommentsController extends Controller
 
         return redirect('/posts/'.$post_id);
     }
+
+
+
+   
+
+
 }

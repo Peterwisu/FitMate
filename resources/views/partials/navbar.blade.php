@@ -51,6 +51,9 @@
                             <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">
                                Your Profile
                             </a>
+                            <a class="dropdown-item" href="/health/{{Auth::user()->id}}">
+                                Your Fitness
+                             </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">

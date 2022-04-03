@@ -45,7 +45,7 @@
                             @csrf
 
 
-                            <button type="submit" class="btn btn-secondary" onclick="alert('Verification email has been sent')"> Click here to verify</button>
+                            <button type="submit" class="btn btn-dark" onclick="alert('Verification email has been sent')"> Click here to verify</button>
                         </form>
                     </div>
                     
@@ -60,32 +60,26 @@
                 <div class="row mt-4 mb-4">
                     <div class="col">Gender:</div>
 
-                    @if($profile->gender == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                    
                     <div class="col"> {{ $profile->gender}} </div>
-                    @endif
+                    
                 </div>
 
 
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Date of Birth:</div>
-                    @if($profile->date_of_birth == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                    
                     <div class="col"> {{ $profile->date_of_birth}} </div>
-                    @endif
+                    
                 </div>
                
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Age:</div>
-                    @if($profile->date_of_birth == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                   
                     <div class="col"> {{ (date_diff(date_create($profile->date_of_birth), date_create(date("Y-m-d"))))->format('%y')}} </div>
-                    @endif
+                    
                 </div>
 
 
@@ -95,41 +89,33 @@
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Height:</div>
-                    @if($profile->height == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                   
                     <div class="col"> {{ $profile->height}} </div>
-                    @endif
+                    
                 </div>
 
 
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Weight:</div>
-                    @if($profile->weight == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                    
                     <div class="col"> {{ $profile->weight}} </div>
-                    @endif
+                    
                 </div>
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Waist:</div>
-                    @if($profile->waist == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                   
                     <div class="col"> {{ $profile->waist}} </div>
-                    @endif
+                    
                 </div>
 
 
                 <div class="row mt-4 mb-4">
                     <div class="col">Neck:</div>
-                    @if($profile->neck == null)
-                    <div class="col"> No infomation </div>
-                    @else
+                   
                     <div class="col"> {{ $profile->neck}} </div>
-                    @endif
+                    
                 </div>
 
 

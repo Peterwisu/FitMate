@@ -43,14 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    //This Post can has many Post  (one to many)
+    //This User can has many Post  (one to many)
     public function Post(){
 
 
         return $this->hasMany(Post::class);
     }
 
-
+    // This User can belong to only one profile
     public function Profile(){
 
         return $this->belongsTo(Profile::class);
