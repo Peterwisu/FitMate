@@ -13,7 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // restrict page to unlogin unlogin user 
+        //$this->middleware(['auth','verified']);
     }
 
     /**
@@ -34,10 +35,7 @@ class HomeController extends Controller
     }
 
    
-    public function contact()
-    {
-        return view("Pages.contact");
-    }
+  
 
     public function find()
     {

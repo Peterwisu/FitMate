@@ -7,6 +7,8 @@ use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HealthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,8 @@ use App\Http\Controllers\ContactFormController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/about',[HomeController::class,'about']);
+/**  Google map api */
+Route::get('/find',[HomeController::class,'find']);
 
 
 
@@ -30,10 +34,11 @@ Route::post('/contact',[ContactFormController::class,'store']);
 // respond page after the email send will redirect to this page
 Route::get('/contact/respond',[ContactFormController::class,'respond']);
 
+/**------------------------ Profile pages ------------------------- */
+Route::resource('/profile',ProfileController::class);
 
-
-/**  Google map api */
-Route::get('/find',[HomeController::class,'find']);
+/**---------------------------Health pages ------------------------ */
+Route::resource('/health',HealthController::class);
 
 
 Route::resource('/posts',PostController::class);
@@ -44,7 +49,9 @@ Route::resource('/comment',CommentsController::class);
 
 
 
-Auth::routes();
+Auth::routes(['verify'=>true]);
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Route::post('/comment',[CommentsController::class,'store']);
