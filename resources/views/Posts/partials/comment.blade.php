@@ -31,7 +31,7 @@
                                 @if (auth()->check())
                                     <!----Button toggle form for Add reply to comment --->
                                     <button type="button" onclick="OpenNewReply({{ $comment->id }})"
-                                    class="btn btn-body ">Reply</button>
+                                        class="btn btn-body ">Reply</button>
                                 @endif
                             </div>
 
@@ -110,10 +110,13 @@
                                     <h4>{{ $reply->content }}</h4>
                                 </div>
                                 <div class="d-flex flex-row align-items-center ml">
-                                     <!------ If user login and if user id is same as a user_id in reply show content---->
+                                    <!------ If user login and if user id is same as a user_id in reply show content---->
                                     @if (auth()->check() && Auth::user()->id == $reply->user_id)
-                                        <button class="btn btn-body delete-comment-button-ajax"
-                                            value="{{ $reply->id }}">&larr;delete </button>
+                                        <form action="/comment/{{ $reply->id }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-body">&larr;delete </button>
+                                        </form>
                                         <button type="button" class="btn btn-body "
                                             onclick=" OpenEdit({{ $reply->id }}) ">Edit</button>
                                     @endif
