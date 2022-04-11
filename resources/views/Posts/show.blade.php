@@ -72,7 +72,7 @@
         }
         //show form for editing reply in web pages
         function ReplyEdit(id) {
-            $("#EditReply" + id).toggle();
+            $("#EditReplyForm" + id).toggle();
         }
 
         function ShowReply(id) {

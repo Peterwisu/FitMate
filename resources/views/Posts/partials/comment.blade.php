@@ -118,11 +118,35 @@
                                             <button type="submit" class="btn btn-body">&larr;delete </button>
                                         </form>
                                         <button type="button" class="btn btn-body "
-                                            onclick=" OpenEdit({{ $reply->id }}) ">Edit</button>
+                                            onclick=" ReplyEdit({{ $reply->id }}) ">Edit</button>
                                     @endif
                                 </div>
 
                             </div>
+                            <!----form for Edit Reply --->
+                        <div class="popUp" style="display:none;" id="EditReplyForm{{ $reply->id }}">
+
+                            <form action="/comment/{{ $reply->id }}" method="POST">
+                                @csrf
+                                @method('PUT')
+
+                                <div class="row">
+                                    <h5>Edit</h5>
+                                </div>
+                                <div class="mb-3 row">
+                                    <input type="hidden" class="form-control" name="id" value="{{ $reply->id }}">
+                                    <div class="">
+                                        
+                                        <textarea class="form-control" name="content" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-dark form-control"
+                                        value="{{ $reply->id }}">Edit Comment</button>
+                                </div>
+                            </form>
+
+                        </div>
                         </div>
                     </div>
 
