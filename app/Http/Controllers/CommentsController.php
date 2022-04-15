@@ -43,7 +43,13 @@ class CommentsController extends Controller
             $replies_id = $request->replies_id;
         }
             
-      
+        $data = request()->validate([
+
+            'content'=>'required',
+            'post_id'=>'required',
+            'is_reply'=>'required', 
+
+        ]);
         
          $comment =Comment::create([
         'content'=>$request->input('content'),
@@ -109,7 +115,12 @@ class CommentsController extends Controller
     public function update(Request $request, $id)
     {
 
-        
+        $data = request()->validate([
+
+            'content'=>'required',
+             
+
+        ]);
 
         $comment = Comment::where('id',$id)->update([
 

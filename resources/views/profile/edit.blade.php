@@ -91,6 +91,24 @@
                             </div>
                         </div>
 
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <label class=""> Activity Level</label>
+                            </div>
+                            <div class="col-6">
+                                <select class="form-control form-control-lg" name="act_level">
+                                    <option selected value='{{$profile->act_level}}'>{{$profile->act_level}}</option>
+                                    <option value='Sedentary'>Sedentary: Little or no exercise</option>
+                                    <option value="Light">Light: Exercise 1-3 times/week</option>
+                                    <option value="Moderate">Moderate: Exercise 4-5 times/week</option>
+                                    <option value="Active">Active: Daily exercise 3-4 times/week</option>
+                                    <option value="VeryActive">Very Active: Intense exercise 6-7 times/week </option>
+                                    <option value="ExtremelyActive">Extremely Active: Very intense exercise daily, or physical job</option>
+                 
+
+                                </select>
+                            </div>
+                        </div>
 
 
 

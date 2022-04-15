@@ -51,6 +51,7 @@ class ProfileController extends Controller
             'weight'         => 'required',
             'neck'           => 'required',
             'waist'          => 'required',
+            'act_level'          => 'required',
 
         ]);
 
@@ -74,6 +75,7 @@ class ProfileController extends Controller
             'gender'=>$request->input('gender'),
             'date_of_birth'=>$request->input('DateOfBirth'),
             'height'=>$request->input('height'),
+            'act_level'=>$request->input('act_level'),
             'weight'=>$request->input('weight'),
             'neck'=>$request->input('neck'),
             'waist'=>$request->input('waist'),
@@ -156,6 +158,7 @@ class ProfileController extends Controller
             'gender'=>$request->input('gender'),
             'date_of_birth'=>$request->input('DateOfBirth'),
             'height'=>$request->input('height'),
+            'act_level'=>$request->input('act_level'),
             'weight'=>$request->input('weight'),
             'neck'=>$request->input('neck'),
             'waist'=>$request->input('waist'),

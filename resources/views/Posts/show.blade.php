@@ -50,12 +50,15 @@
             </div>
         </div>
     </section>
+     
+
 
     <!--- Loop Through comment--->
     @include('posts.partials.comment')
     <!--    Add comment  ---->
     @include('posts.partials.add')
-
+    <!---- display error message from server side validation --->
+    
 
 
 
@@ -112,13 +115,21 @@
                         console.log(xhr)
                         console.log(textStatus)
                         console.log(thrownError)
+                        $("#error").append(`
+                        
+                        <div class="alert alert-danger mt-2" role="alert">
+                            <li> ${xhr.responseJSON.message}</li>
+                        </div>
+                        
+                        
+                        `)
                     },
                     success: function(r) {
                         console.log('Ajax add comment success');
                         console.log(r)
 
                         // Remove a div containig message no comment for post
-                        $('#NoComment').remove();
+                        $('#error').remove();
                         // Append New comment
                         $("#loop-comment").append(`
                         <div class="card mb-4">

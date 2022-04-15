@@ -83,6 +83,16 @@
                 </div>
 
 
+
+                <div class="row mt-4 mb-4">
+                    <div class="col">Activity Level:</div>
+
+                    
+                    <div class="col"> {{ $profile->act_level}} </div>
+                    
+                </div>
+
+
                 
 
 

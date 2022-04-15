@@ -118,12 +118,12 @@
                         const nameElement = document.createElement("h2");
                         nameElement.textContent = place.name;
                         content.appendChild(nameElement);
-                        // const placeIdElement = document.createElement("p");
-                        // placeIdElement.textContent = place.open;
-                        // content.appendChild(placeIdElement);
-                        // const placeAddressElement = document.createElement("p");
-                        // placeAddressElement.textContent = place.formatted_address;
-                        // content.appendChild(placeAddressElement);
+                        const placeIdElement = document.createElement("p");
+                        placeIdElement.textContent = place.open;
+                        content.appendChild(placeIdElement);
+                        const placeAddressElement = document.createElement("p");
+                        placeAddressElement.textContent = place.formatted_address;
+                        content.appendChild(placeAddressElement);
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
                     });

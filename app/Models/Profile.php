@@ -16,7 +16,7 @@ class Profile extends Model
 
     public $timestamps = true;
 
-    protected $fillable = ['id','title','gender','date_of_birth','height','weight','neck','waist'];
+    protected $fillable = ['id','title','gender','date_of_birth','height','weight','neck','waist','act_level'];
 
 
     // This profile belong to only one User
