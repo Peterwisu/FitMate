@@ -1,8 +1,7 @@
-
 <!------Add comment to Posts---->
 
 <section>
-    @if(auth()->check())
+    @if (auth()->check())
         <div class="container justify-content-center">
             <div class="row">
                 <div class="col"></div>
@@ -19,7 +18,7 @@
                     <form action="/comment" method="POST">
                         @csrf
                         <div class="mb-3 row">
-                            <input type="hidden"  name="post_id" id="add-comment-user-id-ajax"
+                            <input type="hidden" name="post_id" id="add-comment-user-id-ajax"
                                 value="{{ $post->id }}">
                             <input type="hidden" name="is_reply" value='0'>
                             <textarea class="form-control" name="content" rows="5" id="add-comment-ajax"></textarea>
@@ -29,19 +28,19 @@
                                 id="add-comment-button-ajax">Comment</button>
                         </div>
                     </form>
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <li>
-                                {{ $error }}
-                            </li>
-                        @endforeach
-                    @endif
+                    <div class=" mt-5" role="alert" id='error'>
+                        @if ($errors->any())
+                                @foreach ($errors->all() as $err)
+                                    <div class="alert alert-danger mt-2" role="alert">
+                                        <li> {{ $err }}</li>
+                                    </div>
+                                @endforeach
+                        @endif
+                    </div>
                 </div>
                 <div class="col"></div>
             </div>
         </div>
-  
-        
     @else
         <div class="container justify-content-center">
             <div class="row  ">

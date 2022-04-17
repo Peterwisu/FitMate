@@ -44,13 +44,15 @@
                         <button type="submit" class="btn btn-dark form-control">Submit</button>
                     </div>
                 </form>
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <li>
-                            {{ $error }}
-                        </li>
-                    @endforeach
-                @endif
+                <div class=" mt-5" role="alert" id='error'>
+                    @if ($errors->any())
+                            @foreach ($errors->all() as $err)
+                                <div class="alert alert-danger mt-2" role="alert">
+                                    <li> {{ $err }}</li>
+                                </div>
+                            @endforeach
+                    @endif
+                </div>
             </div>
 
 

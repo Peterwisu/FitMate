@@ -45,7 +45,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $data = request()->validate([
+
+            'content'=>'required',
+            'name'=> 'required'
+
+        ]);
         $post =Post::create([
 
             'name'=>$request->input('name'),
@@ -95,7 +100,14 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+
+        $data = request()->validate([
+
+            'content'=>'required',
+            'name'=> 'required'
+
+        ]);
         $post = Post::where('id',$id)->update([
 
             "name"=>$request->input('name'),

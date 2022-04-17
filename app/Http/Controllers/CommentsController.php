@@ -35,6 +35,7 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
+       
         // Set replies_id = null and only assign value to it if is a reply ***replies_id contain comment_id post that get reply****
         $replies_id = null;
         // 1 mean it is a reply
@@ -42,7 +43,13 @@ class CommentsController extends Controller
             $replies_id = $request->replies_id;
         }
             
-      
+        $data = request()->validate([
+
+            'content'=>'required',
+            'post_id'=>'required',
+            'is_reply'=>'required', 
+
+        ]);
         
          $comment =Comment::create([
         'content'=>$request->input('content'),
@@ -67,6 +74,7 @@ class CommentsController extends Controller
              'create_at'=>$comment->created_at,
              'content'=> $comment->content,
              'user_id'=>$comment->user_id,
+             'post_id'=>$comment->post_id,
              'id'=>$comment->id,    
          ]);
         }
@@ -107,7 +115,12 @@ class CommentsController extends Controller
     public function update(Request $request, $id)
     {
 
-        
+        $data = request()->validate([
+
+            'content'=>'required',
+             
+
+        ]);
 
         $comment = Comment::where('id',$id)->update([
 
@@ -133,8 +146,14 @@ class CommentsController extends Controller
     public function destroy($id)
     {
         $comment = Comment::find($id); 
-
+        $replies= $comment->getreplies($id);
         $comment->delete();
+        foreach($replies as $reply){
+            $reply->delete();
+        }
+
+
+      
 
         
         //get a post_id of a post to redirect page back to that post

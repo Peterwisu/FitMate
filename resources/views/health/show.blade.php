@@ -24,6 +24,12 @@
 
                 <div class="row mt-4 mb-4">
 
+                    <div class="col"> Your Activity Level </div>
+                    <div class="col">    {{$health->getProfile($health->id)->act_level}}         </div>
+                </div>
+
+                <div class="row mt-4 mb-4">
+
                     <div class="col"> Your weight </div>
                     <div class="col">    {{$health->getProfile($health->id)->weight}}         </div>
                 </div>
