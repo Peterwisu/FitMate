@@ -11286,3 +11286,23 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.contact-heading{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 36px;
+}
+.btn-reg a{
+  background: #4F46E5;
+  color: white!important;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 5%);
+  border-radius: 6px;
+}
+.justify-space-between{
+  justify-content: space-between;
+}
+.footer-menu a{
+  text-decoration-line: none;
+  color: #6B7280;
+}
