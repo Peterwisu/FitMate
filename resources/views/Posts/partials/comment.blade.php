@@ -37,7 +37,7 @@
 
                         </div>
                         <!----form for Edit comment --->
-                        <div class="popUp" style="display:none;" id="EditCommentForm{{ $comment->id }}">
+                        <div class="popUp hidden"  id="EditCommentForm{{ $comment->id }}">
 
                             <form action="/comment/{{ $comment->id }}" method="POST">
                                 @csrf
@@ -62,7 +62,7 @@
 
                         </div>
                         <!----form for adding reply --->
-                        <div class="popUp" style="display:none;" id="AddReplyForm{{ $comment->id }}">
+                        <div class="popUp hidden"  id="AddReplyForm{{ $comment->id }}">
                             <form action="/comment" method="POST">
                                 @csrf
                                 <div class="row">

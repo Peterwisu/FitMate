@@ -9,8 +9,8 @@
             </div>
 
             <div class=" row text-center mt-5">
-                <h3>
-                    <a class="" onclick="locatorButtonPressed()">
+                <h3><button class='btn btn-dark' >
+                    <a class="" onclick="locatorButtonPressed()" style="color: white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-up-right-circle-fill" viewBox="0 0 16 16">
                             <path
@@ -18,22 +18,25 @@
                         </svg>
                         Click here to search fitness Center near you
                     </a>
+                </button>
                 </h3>
             </div>
         </div>
     </div>
-    <div id="container">
-      <div id="map"></div>
-      <div id="sidebar" class='text-center'>
-          <div >
-            <h2 class="mt-3 mb-3">Results</h2>
-            <hr>
-          </div>
+    
+    <div id="container" class='container'>
+       
+        <div id="map" class=""></div>
+        <div id="sidebar" class='text-center'>
+            <div id='map-result'>
+                <h2 class="mt-3 mb-3">Results</h2>
+                
+            </div>
 
 
-        <ul id="places"></ul>
-        <button id="more">Load more results</button>
-      </div>
+            <ul id="places"></ul>
+            <button id="more" >Load more results</button>
+        </div>
     </div>
 
 
@@ -43,6 +46,8 @@
 
 
         function initMap() {
+
+
             // Create the map.
             var pyrmont = new google.maps.LatLng(lat, lng);
             var map = new google.maps.Map(document.getElementById("map"), {
@@ -55,22 +60,16 @@
                 rankBy: google.maps.places.RankBy.DISTANCE,
                 type: "gym"
             }
-
-
-
             const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
             const beachMarker = new google.maps.Marker({
                 position: pyrmont,
                 map,
                 icon: image,
             });
-
-
             // Create the places service.
             const service = new google.maps.places.PlacesService(map);
             let getNextPage;
             const moreButton = document.getElementById("more");
-
             moreButton.onclick = function() {
                 moreButton.disabled = true;
                 if (getNextPage) {
@@ -100,7 +99,7 @@
         function addPlaces(places, map) {
             const placesList = document.getElementById("places");
             placesList.innerHTML = "";
-
+            const infowindow = new google.maps.InfoWindow();
             for (const place of places) {
                 if (place.geometry && place.geometry.location) {
                     const image = {
@@ -110,30 +109,46 @@
                         anchor: new google.maps.Point(17, 34),
                         scaledSize: new google.maps.Size(25, 25),
                     };
-
-
-
-
-                    new google.maps.Marker({
+                    const marker = new google.maps.Marker({
                         map,
-
                         title: place.name,
                         position: place.geometry.location,
                     });
-
-
+                    google.maps.event.addListener(marker, "click", () => {
+                        const content = document.createElement("div");
+                        const nameElement = document.createElement("h2");
+                        nameElement.textContent = place.name;
+                        content.appendChild(nameElement);
+                        const placeIdElement = document.createElement("p");
+                        placeIdElement.textContent = place.open;
+                        content.appendChild(placeIdElement);
+                        const placeAddressElement = document.createElement("p");
+                        placeAddressElement.textContent = place.formatted_address;
+                        content.appendChild(placeAddressElement);
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    });
                     const li = document.createElement("li");
                     const ul_r = document.createElement("ul");
                     const hr = document.createElement("hr");
                     li.textContent = place.name;
-                    //ul_r.textContent = "Rating :" + place.place_id + "  price: " + place.price_level + "  Address: " + place
-                      //  .formatted_address;
                     placesList.appendChild(li);
                     placesList.appendChild(ul_r);
                     placesList.appendChild(hr)
                     li.addEventListener("click", () => {
                         map.setCenter(place.geometry.location);
-
+                        const content = document.createElement("div");
+                        const nameElement = document.createElement("h2");
+                        nameElement.textContent = place.name;
+                        content.appendChild(nameElement);
+                        // const placeIdElement = document.createElement("p");
+                        // placeIdElement.textContent = place.place_id;
+                        // content.appendChild(placeIdElement);
+                        // const placeAddressElement = document.createElement("p");
+                        // placeAddressElement.textContent = place.formatted_address;
+                        // content.appendChild(placeAddressElement);
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
                     });
 
                 }
@@ -141,33 +156,13 @@
             }
         }
 
-
-
-
-        function findCloseByButtonPressed() {
-
-
-            console.log(this.lat)
-            console.log(this.lng)
-
-            initMap()
-        }
-
-        function onChange() {
-
-            this.distance = document.getElementById('selectID').value
-            console.log(this.distance)
-        }
-
         function locatorButtonPressed() {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     this.lat = position.coords.latitude;
                     this.lng = position.coords.longitude;
-                    findCloseByButtonPressed()
+                    initMap()
                     console.log(this.lat + ',' + this.lng)
-
-
                 },
                 (error) => {
                     console.log("Error getting location");
@@ -178,6 +173,6 @@
         }
     </script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key={{config('services.google.key')}}&callback=initMap&libraries=places&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.key') }}&callback=initMap&libraries=places&v=weekly"
         async></script>
 @endsection
