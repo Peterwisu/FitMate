@@ -25,6 +25,10 @@ Route::get('/about',[HomeController::class,'about']);
 /**  Google map api */
 Route::get('/find',[HomeController::class,'find']);
 
+/** Privacy pages*/
+Route::get('/privacy',[HomeController::class,'privacy']);
+Route::get('/terms',[HomeController::class,'terms']);
+
 
 
 /**-------------   Contact page ----------------------------- */
