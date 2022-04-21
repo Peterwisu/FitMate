@@ -109,6 +109,9 @@ class ProfileController extends Controller
 
         $profile = Profile::find($id);
         
+        
+
+
         // if profile does not exist in database then redirect it to create page
         if($profile == null){
             return redirect('profile/create');
