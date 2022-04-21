@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // restrict page to unlogin unlogin user 
+        // restrict page to unlogin unlogin user
         //$this->middleware(['auth','verified']);
     }
 
@@ -22,26 +22,36 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    
+
     public function index()
     {
         return view("Pages.index");
     }
 
-   
+
     public function about()
     {
         return view("Pages.about");
     }
 
-   
-  
+
+
 
     public function find()
     {
         return view("Pages.find");
     }
 
+    public function privacy()
+    {
+        return view("Pages.privacy");
+    }
 
-    
+    public function terms()
+    {
+        return view("Pages.terms");
+    }
+
+
+
 }
