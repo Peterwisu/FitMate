@@ -11286,3 +11286,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+.error{
+  color: red;
+  font-size: 13px;
+}

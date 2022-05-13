@@ -52,6 +52,10 @@ class HomeController extends Controller
         return view("Pages.terms");
     }
 
+    public function calculator(){
+
+        return view("Pages.calculator");
+    }
 
 
 }
