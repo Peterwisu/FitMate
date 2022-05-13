@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->enum('title', ['Mr.', 'Mrs.', 'Ms.','Dr.','Prof.']);
-            $table->enum('gender',['male','female']);
+            $table->enum('gender',['male','female','non-binary','transgender','others','prefer_not_tosay']);
             $table->enum('act_level',['Sedentary','Light','Moderate','Active','VeryActive','ExtremelyActive']);
             $table->date('date_of_birth');
             $table->unsignedInteger('height');
