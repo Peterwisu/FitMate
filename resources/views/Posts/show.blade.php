@@ -66,28 +66,12 @@
         //show form for editing comment in web pages
         function OpenEdit(id) {
             console.log('toggle');
-            if ($("#EditCommentForm" + id).hasClass('hidden')){
-                $("#AddReplyForm" + id).addClass('hidden');
-                $("#EditCommentForm" + id).removeClass('hidden');
-            }else{
-                $("#EditCommentForm" + id).addClass('hidden');
-               
-            }
-            
-
+            $("#EditCommentForm" + id).toggle();
         }
         //show form for creating reply in web pages
         function OpenNewReply(id) {
             console.log('toggle')
-            
-            if ($("#AddReplyForm" + id).hasClass('hidden')){
-                $("#EditCommentForm" + id).addClass('hidden');
-                $("#AddReplyForm" + id).removeClass('hidden');
-            }else{
-                $("#AddReplyForm" + id).addClass('hidden');
-               
-            }
-           
+            $("#AddReplyForm" + id).toggle();
         }
         //show form for editing reply in web pages
         function ReplyEdit(id) {

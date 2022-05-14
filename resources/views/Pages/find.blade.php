@@ -23,7 +23,6 @@
             </div>
         </div>
     </div>
-    
     <div id="container" class='container'>
        
         <div id="map" class=""></div>
