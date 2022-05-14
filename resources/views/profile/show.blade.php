@@ -2,6 +2,12 @@
 
 
 @section('content')
+ 
+{{--       
+        @if(auth()->user()->id !== $profile->id)
+
+            {{abort(403)}}
+        @endif --}}
     <div class="container">
         <div class="row mt-4">
             <div class="col-md-3"></div>

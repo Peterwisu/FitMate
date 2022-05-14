@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 class PostController extends Controller
 {
 
@@ -86,6 +86,10 @@ class PostController extends Controller
     {
         
         $post = Post::find($id);
+        
+        if (! Gate::allows('update-post', $post )) {
+            abort(403);
+        }
 
        
         return view('Posts.edit')->with('post',$post);
@@ -101,6 +105,11 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {   
+
+        $post = Post::find($id);
+        if (! Gate::allows('update-post', $post )) {
+            abort(403);
+        }
 
         $data = request()->validate([
 
