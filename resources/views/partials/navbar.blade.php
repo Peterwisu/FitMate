@@ -25,8 +25,7 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="/contact">Contact</a></li>
-                        <li><a class="dropdown-item" href="/about">About</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="/posts">Forum</a></li>
                     </ul>
                     </div>
                 </li>
