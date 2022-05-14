@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;900&display=swap');
+
+
+
+.header_forum{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    /* identical to box height, or 120% */
+
+    letter-spacing: -0.025em;
+
+    /* gray/900 */
+
+    color: #111827;
+}
+
+
+.forum_text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 133% */
+
+
+    /* gray/500 */
+
+    color: #6B7280;
+
+}
+
+.forum_all_post{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+/* identical to box height, or 120% */
+
+letter-spacing: -0.025em;
+
+/* gray/900 */
+
+color: #111827;
+}
+
+.btn-dark{
+
+    background-color: #4F46E5;
+    border: none;
+outline: none;
+}
+.btn-dark>a{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+    
+}
+
+a{
+    text-decoration: none !important;
+  
+}
+
+.post_author{
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111827;
+}
+
+.post_name{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6B7280;
+}
+
+.post_content{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4B5563;
+
+}
+
+.post_detail{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+/* or 133% */
+
+
+color: #000000;
+
+
+}
+
+.hidden{
+    display: none;
+  }

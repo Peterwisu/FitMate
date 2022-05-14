@@ -5,9 +5,15 @@ use App\Models\User;
 use App\Models\Profile;
 use App\Models\Health;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 class ProfileController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,11 +53,11 @@ class ProfileController extends Controller
             'DateOfBirth'    => 'required|date_format:Y-m-d|before:today',
             'title'          => 'required',
             'gender'         => 'required',
-            'height'         => 'required',
-            'weight'         => 'required',
-            'neck'           => 'required',
-            'waist'          => 'required',
-            'act_level'          => 'required',
+            'height'         => 'required|max:300',
+            'weight'         => 'required|max:300',
+            'neck'           => 'required|max:300',
+            'waist'          => 'required|max:300',
+            'act_level'      => 'required',
 
         ]);
 
@@ -108,9 +114,9 @@ class ProfileController extends Controller
     {
 
         $profile = Profile::find($id);
-        
-        
-
+        if (! Gate::allows('update-profile', $profile)) {
+            abort(403);
+        }
 
         // if profile does not exist in database then redirect it to create page
         if($profile == null){
@@ -130,6 +136,9 @@ class ProfileController extends Controller
     public function edit($id)
     {
         $profile = Profile::find($id);
+        if (! Gate::allows('update-profile', $profile)) {
+            abort(403);
+        }
 
        
         return view('profile.edit')->with('profile',$profile);
@@ -145,15 +154,22 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
 
+        $profile = Profile::find($id);
+        if (! Gate::allows('update-profile', $profile)) {
+            abort(403);
+        }
         // Validation for input data
         $data = request()->validate([
+            
             'DateOfBirth'    => 'required|date_format:Y-m-d|before:today',
             'title'          => 'required',
             'gender'         => 'required',
-            'height'         => 'required',
-            'weight'         => 'required',
-            'neck'           => 'required',
-            'waist'          => 'required',
+            'height'         => 'required|digits_between:1,3',
+            'weight'         => 'required|digits_between:1,3',
+            'neck'           => 'required|digits_between:1,3',
+            'waist'          => 'required|digits_between:1,3',
+            'act_level'      => 'required',
+
         ]);
         // Update profile
         $profile = Profile::where('id',$id)->update([
@@ -295,6 +311,7 @@ class ProfileController extends Controller
 
     public function category_body_fat($bfp, $gender){
 
+        //$bfp_cat= null;
         if($gender =='male'){
 
             if($bfp>=2&&$bfp<=5){

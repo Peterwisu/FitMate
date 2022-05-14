@@ -5,7 +5,7 @@
 <strong> Email</strong> {{$data['email']}}<br>
 <strong> Message</strong> <br>
 {{$data['message']}}
-@component('mail::button', ['url' => 'www.google.com'])
+@component('mail::button', ['url' => ''])
 Go to Website
 @endcomponent
 
