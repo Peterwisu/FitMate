@@ -8,7 +8,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse d-flex justify-center" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto" style="margin-left:auto;">
                 <li class="nav-item">
@@ -30,7 +30,7 @@
                     </ul>
                     </div>
                 </li>
-                
+
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -39,7 +39,7 @@
                 @guest
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link sign-up-btn"  href="{{ route('register') }}">Sign In</a>
+                            <a class="nav-link sign-up-btn"  href="{{ route('login') }}">Sign In</a>
                         </li>
                     @endif
                     @if (Route::has('login'))
@@ -48,7 +48,7 @@
                         </li>
                     @endif
 
-                    
+
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -68,7 +68,7 @@
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            
+
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
