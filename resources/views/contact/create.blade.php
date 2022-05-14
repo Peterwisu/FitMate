@@ -2,41 +2,45 @@
 
 
 @section('content')
-    <div class="container mb-5">
-        <div class="row justify-content-center">
+<div class="container mb-5 mt-5hait">
+    <div class="row justify-content-center" style="align-items: center;">
+    <div class="col-md-5">
+        <h1 class="contact-heading">Contact FitMate</h2>
+        <p>We’re here to help and answer any question you might have. We look forward to hearing from you!</p>
+        <div>
+            <div><i class="fa fa-envelope me-3" aria-hidden="true"></i>fitmateapplication@gmail.com</div>
+        </div>
+    </div>
 
             <div class="col-md-7">
-                <div class="card mt-4">
-
-                    <div class="card-body text-center">
-
-                        <div class="row mb-4 mt-4">
-                            <h1 class="">Contact Us </h1>
-                        </div>
+                <div class="mt-4">
+                    <div class="text-center">
 
                         <form action="/contact" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label  class="form-label">Email address</label>
-                                <input type="email" name='email'class="form-control" placeholder="name@example.com">
-                               
+                                <input type="text" name='name'class="form-control" placeholder="Full name">
+
 
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Name</label>
-                                <input type="text" name='name'class="form-control" placeholder="Your name">
-                                
-                                
+                                <input type="email" name='email'class="form-control" placeholder="Email">
+
+
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
-                                <textarea class="form-control" name='message'placeholder="message" rows="3"></textarea>
-                                
-                                
+                            <input type="text" name='Phone'class="form-control" placeholder="Phone">
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="col-md-8 text-center ">
-                                    <button type="submit" class="btn btn-secondary ">Submit</button>
+
+                            <div class="mb-3">
+
+                                <textarea class="form-control" name='message'placeholder="Message" rows="3"></textarea>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8" style="text-align:left;">
+                                    <button type="submit" class="btn btn-sub">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -47,8 +51,8 @@
                             <div class=" mt-5" role="alert">
                                 @foreach ($errors->all() as $err)
                                 <div class="alert alert-danger mt-2" role="alert">
-                                    <li> {{$err}}</li>       
-                                </div>                         
+                                    <li> {{$err}}</li>
+                                </div>
                                 @endforeach
                             </div>
                         @endif
