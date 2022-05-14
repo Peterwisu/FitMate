@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Health;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 
 class HealthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,8 +32,10 @@ class HealthController extends Controller
     {
 
         $health= Health::find($id);
-        
-        
+        if (! Gate::allows('update-health', $health)) {
+            abort(403);
+        }
+
         // if profile does not exist in database then redirect it to create page
         if($health == null){
             return redirect('profile/create');
