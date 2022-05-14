@@ -15,7 +15,7 @@
                     <a class="nav-link" href="/find">Find a Gym</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">Fitness Calculator</a>
+                    <a class="nav-link" href="/calculator">Fitness Calculator</a>
                 </li>
                 <li class="nav-item">
                 <div class="dropdown">
