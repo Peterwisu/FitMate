@@ -22,6 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/googlemap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
     
 
 
