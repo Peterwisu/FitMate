@@ -29,6 +29,8 @@ Route::get('/find',[HomeController::class,'find']);
 Route::get('/privacy',[HomeController::class,'privacy']);
 Route::get('/terms',[HomeController::class,'terms']);
 
+/** Fitness calculator */
+Route::get('/calculator',[HomeController::class,'calculator']);
 
 
 /**-------------   Contact page ----------------------------- */

@@ -20,7 +20,7 @@ class ContactFormController extends Controller
 
         
         // validation for contact from
-        $data = request()->validate([
+        request()->validate([
 
              'name'    => 'required',
              'email'   => 'required',
@@ -28,9 +28,14 @@ class ContactFormController extends Controller
 
          ]);
         
+        $data = $request->all();
+        
 
-        // send an email to mail trap
-        Mail::to('test@test.com')->send(new ContactFormMail($data));
+        // send mail to user
+        Mail::to($request->email)->send(new ContactFormMail($data));
+        // send mail to the fitmate email 
+        Mail::to('fitmateapplication@gmail.com')->send(new ContactFormMail($data));
+        
 
          
         return redirect('/contact/respond');

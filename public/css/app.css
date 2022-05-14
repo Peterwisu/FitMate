@@ -11337,3 +11337,8 @@ padding: 13px 25px;
 .btn-sub:active {
     color: #fff;
 }
+
+.error{
+    color: red;
+    font-size: 13px;
+}
