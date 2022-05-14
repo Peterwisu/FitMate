@@ -14,9 +14,7 @@
 
             <div class="mt-5 ">
                 <p class="forum_text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ante in nibh mauris cursus mattis. Ac odio tempor orci dapibus ultrices in iaculis
-                    nunc. Augue ut lectus arcu bibendum at. Dui ut ornare lectus sit amet.
+                    Welcome to the Fitness Forum! Feel free to browse the already existing posts to gain some new knowledge, comment to share some of your knowledge, or add a post yourself if you feel like it.
                 </p>
             </div>
 
@@ -54,7 +52,7 @@
 
 
                                 </p>
-                                
+
 
                             </a>
                         </div>
@@ -73,13 +71,13 @@
 
 
 
-                        
+
                     </div>
 
                     <div class="">
                         <a href="/posts/{{ $post->id }}">
 
-            
+
                             <p class="post_name">
                                 {{ $post->name }}
                             </p>
@@ -97,7 +95,7 @@
                             No post
                         <p>
                     </div>
-                    
+
                 @endforelse
 
 

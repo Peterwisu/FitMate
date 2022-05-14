@@ -143,7 +143,7 @@
                                   </svg> Show Reply</p>
                             </button>
                         </div>
-                        
+
                     </div>
                     <hr>
                 </div>
@@ -156,7 +156,7 @@
                     <!----There is a reply and display-->
                     <div class="row">
                         <div class="col-md-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
                               </svg>
                         </div>
@@ -173,16 +173,16 @@
                                             {{ date_diff(date_create($reply->created_at), date_create(date('Y-m-d')))->format('%d') }}d
                                             ago
                                         @endif
-    
+
                                     </div>
                                 </div>
-    
+
                                 <div class="row mt-3 mx-2 mb-3">
                                     <div class="col-md-10">
                                         <p class="post_content">
                                             {{ $reply->content }}</p>
                                     </div>
-    
+
                                     <!------ If user login and if user id is same as a user_id in reply show content---->
                                     @if (auth()->check() && Auth::user()->id == $reply->user_id)
                                         <div class="col-md-1">
@@ -209,8 +209,8 @@
                                                 </svg><br>Edit</button>
                                         </div>
                                     @endif
-    
-    
+
+
                                 </div>
                                 <!----form for Edit Reply --->
                                 <div class="popUp" style="display:none;" id="EditReplyForm{{ $reply->id }}">
@@ -218,33 +218,33 @@
                                         <form action="/comment/{{ $reply->id }}" method="POST">
                                             @csrf
                                             @method('PUT')
-    
-    
-    
+
+
+
                                             <input type="hidden" class="form-control" name="id"
                                                 value="{{ $reply->id }}">
                                             <div class="mt-2 mb-2">
-    
+
                                                 <textarea class="form-control" name="content" rows="4" placeholder="Edit your reply"></textarea>
                                             </div>
-    
+
                                             <div>
                                                 <button type="submit" class="btn btn-dark form-control"
                                                     value="{{ $reply->id }}">Edit Comment</button>
                                             </div>
                                         </form>
                                     </div>
-    
+
                                 </div>
                                 <div class="row mt-3 mx-2">
                                     <hr>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
-                    
-                    
+
+
 
                 @empty
 
