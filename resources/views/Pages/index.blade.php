@@ -6,9 +6,9 @@
         <div class="container-fluid" >
             <div class="row d-flex justify-content-center">
                 <div class="w-75 pt-5" style="padding-bottom: 150px">
-                    <h1 class="mt-5, aaa">Best way to start your <span class ="Indigo">fitness journey</span></h1>
+                    <h1 class="aaa">Best way to start your <span class ="Indigo">fitness journey</span></h1>
                     <p class="aab"> Welcome to our FitMate website! Do you want to start your fitness journey but are not sure where to begin? No need to look any further! </p>
-                    <div class="d-flex justify-content-center align-content-between">
+                    <div class="main-buttons">
                         <a href='/find'><button type="button" class="btn-sub border-0">Find a Gym</button></a>
                         <a href='/calculator'><button type="button" class="calc">Check out your fitness level</button></a>
                     </div>

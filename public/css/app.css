@@ -11348,7 +11348,6 @@ padding: 13px 25px;
     font-weight: 800;
     font-size: 60px;
     line-height: 60px;
-    white-space: nowrap;
     text-align: center;
     letter-spacing: -0.025em;
     color: #111827;
@@ -11424,4 +11423,32 @@ padding: 13px 25px;
     padding-bottom: 100px;
     align-items: center;
     background: #4338CA;
+}
+
+.main-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 620px) {
+    .aaa {
+        font-size: 40px;
+    }
+
+    .main-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calc {
+        margin-top: 15px;
+    }
+
+    .boxed {
+        font-size: 30px;
+    }
+
+    .Subtext {
+        font-size: 15px;
+    }
 }
