@@ -4519,7 +4519,7 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: 0px solid rgb(255, 255, 255);
   border-radius: 0.25rem;
-  
+
 }
 .card > hr {
   margin-right: 0;
@@ -11345,357 +11345,83 @@ padding: 13px 25px;
 }
 
 .aaa{
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 800;
     font-size: 60px;
     line-height: 60px;
-    /* identical to box height, or 100% */
     white-space: nowrap;
     text-align: center;
     letter-spacing: -0.025em;
-
-    /* gray/900 */
-
     color: #111827;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
 }
 
 
 .Indigo{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 60px;
-  line-height: 60px;
-  /* identical to box height, or 100% */
-
-  text-align: center;
-  letter-spacing: -0.025em;
-
-  /* gray/900 */
-
   color : #4338CA;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
- 
 }
 
 .aab{
-
-  /* Supporting text */
-
-
-width: 768px;
-height: 56px;
-margin-top: -225px;
-/*top: 80px;
-left: 240px;*/
-
-
-/* text-xl/leading-7/font-normal */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 60px;
-/* or 140% */
-
-
-text-align: center;
-
-/* gray/500 */
-
-color: #6B7280;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-
-
+    font-size: 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #6B7280;
+    padding-top: 20px;
 }
 
 .aac{
-  /* Heading */
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 40px;
 
-
-width: 896px;
-height: 40px;
-
-/* text-4xl/leading-10/font-extrabold */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 36px;
-line-height: 40px;
-/* identical to box height, or 111% */
-
-text-align: center;
-
-/* gray/900 */
-
-color: #111827;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
+    text-align: center;
+    color: #111827;
 }
 
+.calc{
+    padding: 11px 25px;
 
-
-
-.findgym{
-  /* Hero Sections/CTA button link */
-          
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 17px 41px;
-
-width: 179px;
-height: 62px;
-margin-top: -150;
-margin-right: -200;
-margin-left : 500;
-color:white;
-/* indigo/600 */
-border: none;
-background: #4F46E5;
-/* /shadow/base */
-
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
-border-radius: 6px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-}
-
-.calculator{
-
-  /* Hero Sections/CTA button link */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: inline ;
-padding: 17px 41px;
-
-width: 331px;
-height: 62px;
-
-/* Text */
-
-
-width: 249px;
-height: 50px;
-
-/* text-lg/leading-7/font-medium */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 28px;
-white-space: nowrap;
-/* identical to box height, or 156% */
-
-
-/* indigo/600 */
-
-color: #4F46E5;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-
-/* white */
-border: none;
-background: #F9FAFB;
-/* /shadow/base */
-
-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
-border-radius: 6px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
-}
-
-.aad{
-
-  /* Supporting text */
-
-
-width: 896px;
-height: 28px;
-
-/* text-xl/leading-7/font-normal */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 28px;
-/* identical to box height, or 140% */
-
-text-align: center;
-
-/* gray/500 */
-
-color: #6B7280;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    white-space: nowrap;
+    color: #4F46E5;
+    margin-left: 15px;
+    border: none;
+    background: #F9FAFB;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 6px;
 }
 
 .boxed{
-/* Amount */
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 48px;
 
+    text-align: center;
+    color: #4F46E5;
 
-width: 248px;
-height: 48px;
+    background: #FFFFFF;
 
-/* text-5xl/leading-none/font-extrabold */
-
-
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 48px;
-line-height: 48px;
-/* identical to box height, or 100% */
-
-text-align: center;
-
-/* indigo/600 */
-
-color: #4F46E5;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
-  /* Stats */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 0px;
-
-position: absolute;
-width: 896px;
-height: 128px;
-left: calc(50% - 896px/2 - 0.5px);
-/*top: 0px;*/
-margin-bottom: 500;
-/* white */
-
-background: #FFFFFF;
-/* /shadow/lg */
-
-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
 .Subtext{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
 
-  /* Label */
+    text-align: center;
 
-
-
-
-width: 248px;
-height: 24px;
-
-/* text-lg/leading-6/font-medium */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 24px;
-/* identical to box height, or 133% */
-
-text-align: center;
-
-/* gray/500 */
-
-color: #6B7280;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 1;
-flex-grow: 0;
+    color: #6B7280;
 }
 
 
 .boxed2{
-
-  /* Simple center branded/Desktop */
-
-
-/* Auto layout */
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-
-position: absolute;
-width: 1440px;
-height: 410px;
-left: 0px;
-top: 1040px;
-
-/* indigo/700 */
-
-background: #4338CA;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    align-items: center;
+    background: #4338CA;
 }
