@@ -73,12 +73,6 @@
                                     <option selected value='{{$profile->gender}}'>{{$profile->gender}}</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
-                                    <option value="non-Binary">Non-binary/non-conforming</option>
-                                    <option value="transgender">Transgender</option>
-                                    <option value="others">Other</option>
-                                    <option value="prefer_not_tosay">Prefer not to say</option>
-                                    
-
 
                                 </select>
                             </div>

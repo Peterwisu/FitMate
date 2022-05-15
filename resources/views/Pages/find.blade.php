@@ -1,177 +1,166 @@
 @extends('layouts.app')
-
-
 @section('content')
-    <div class="container mb-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center mt-4">
-                <h1 class="">Find nearest Fitness Center nears you</h1>
+    <div class="container mb-5 find-map">
+        <div class="row">
+            <div class="col-md-8 mt-4">
+                <h2 class="fit-title">FitMate Gym Finder</h2>
             </div>
 
-            <div class=" row text-center mt-5">
-                <h3><button class='btn btn-dark' >
-                    <a class="" onclick="locatorButtonPressed()" style="color: white">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-up-right-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8zm5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707l-4.096 4.096z" />
-                        </svg>
-                        Click here to search fitness Center near you
-                    </a>
-                </button>
-                </h3>
+            <div class="sub-title me-3 mt-4" >
+              <h4>Find Your Nearest Gym</h4>
+              <p>
+                Tell us your location and we will show you what nearest options do you have.
+              </p>
             </div>
         </div>
-    </div>
-    <div id="container" class='container'>
-       
-        <div id="map" class=""></div>
-        <div id="sidebar" class='text-center'>
-            <div id='map-result'>
-                <h2 class="mt-3 mb-3">Results</h2>
-                
-            </div>
-
-
-            <ul id="places"></ul>
-            <button id="more" >Load more results</button>
+        <div class="row d-flex justify-content-center mx-auto mt-2 mb-4" style="width:760px;">
+          <div class="col-md-8">
+           <input type="text" class="form-control" placeholder="Location"/>
+         </div>
+         <div class="col-md-4">
+           <button type="button" class="search-btn"><i class="fa fa-search"></i>Search</button>
+         </div>
         </div>
     </div>
+    <div class='container find-map'>
+        <div id="map" ></div>
 
 
-    <script>
-        var lat = "51.24248284045735";
-        var lng = "-0.5819955829087929";
+        <div class="subtitle mt-4 mx-2"><h4>Result</h4></div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mx-auto" style="width: 344px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h5 class="card-title">The Gym Guildford</h5><span class="gym-badge rounded-pill gym-info mx-2">Gym</span>
+                </div>
+                <p class="card-text">3 Woodbridge Meadows, Guildford GU1 1BA</p>
+                <div class="row d-flex justify-contact-center border-top pt-3">
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-envelope-o pe-2"></i>Email</div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-phone pe-2"></i>Call</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mx-auto" style="width: 344px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h5 class="card-title">The Gym Guildford</h5><span class="gym-badge rounded-pill gym-info mx-2">Gym</span>
+                </div>
+                <p class="card-text">3 Woodbridge Meadows, Guildford GU1 1BA</p>
+                <div class="row d-flex justify-contact-center border-top pt-3">
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-envelope-o pe-2"></i>Email</div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-phone pe-2"></i>Call</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="card mx-auto" style="width: 344px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h5 class="card-title">Garage Gym Fitness</h5><span class="gym-badge rounded-pill gym-info mx-2" style="width:114px; background-color:#D1E1FA;">Personal Trainer</span>
+                </div>
+                <p class="card-text">74 Cline Rd, Guildford GU1 3NH</p>
+                <div class="row d-flex justify-contact-center border-top pt-3">
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-envelope-o pe-2"></i>Email</div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-phone pe-2"></i>Call</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mx-auto" style="width: 344px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h5 class="card-title">Garage Gym Fitness</h5><span class="gym-badge rounded-pill gym-info mx-2" style="width:114px; background-color:#D1E1FA;">Personal Trainer</span>
+                </div>
+                <p class="card-text">74 Cline Rd, Guildford GU1 3NH</p>
+                <div class="row d-flex justify-contact-center border-top pt-3">
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-envelope-o pe-2"></i>Email</div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-phone pe-2"></i>Call</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        function initMap() {
+        <div class="row mt-4">
+          <div class="col-md-6">
+            <div class="card mx-auto" style="width: 344px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h5 class="card-title">Surrey Sports Park</h5><span class="gym-badge rounded-pill gym-info mx-2" style="width:110px; background-color:#FAF8D1;">Sports complex</span>
+                </div>
+                <p class="card-text">Richard Meyjes Rd, Guildford GU2 7AD</p>
+                <div class="row d-flex justify-contact-center border-top pt-3">
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-envelope-o pe-2"></i>Email</div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-phone pe-2"></i>Call</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mx-auto" style="width: 344px;">
+              <div class="card-body">
+                <div class="d-flex justify-content-center">
+                  <h5 class="card-title">Surrey Sports Park</h5><span class="gym-badge rounded-pill gym-info mx-2" style="width:110px; background-color:#FAF8D1;">Sports complex</span>
+                </div>
+                <p class="card-text">Richard Meyjes Rd, Guildford GU2 7AD</p>
+                <div class="row d-flex justify-contact-center border-top pt-3">
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-envelope-o pe-2"></i>Email</div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <div class="contact-text"><i class="fa fa-phone pe-2"></i>Call</div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+<script>
+  var lat = 51.24248284045735;
+  var lng = -0.5819955829087929;
 
+    let map;
 
-            // Create the map.
-            var pyrmont = new google.maps.LatLng(lat, lng);
-            var map = new google.maps.Map(document.getElementById("map"), {
-                center: pyrmont,
-                zoom: 16,
-                mapId: "8d193001f940fde3",
-            });
-            request = {
-                location: pyrmont,
-                rankBy: google.maps.places.RankBy.DISTANCE,
-                type: "gym"
-            }
-            const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-            const beachMarker = new google.maps.Marker({
-                position: pyrmont,
-                map,
-                icon: image,
-            });
-            // Create the places service.
-            const service = new google.maps.places.PlacesService(map);
-            let getNextPage;
-            const moreButton = document.getElementById("more");
-            moreButton.onclick = function() {
-                moreButton.disabled = true;
-                if (getNextPage) {
-                    getNextPage();
-                }
-            };
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat, lng},
+        zoom: 16,
+      });
+    }
 
-            // Perform a nearby search.
-            service.nearbySearch(request,
-                (results, status, pagination) => {
-                    if (status !== "OK" || !results) return;
-
-                    addPlaces(results, map);
-                    moreButton.disabled = !pagination || !pagination.hasNextPage;
-                    if (pagination && pagination.hasNextPage) {
-                        getNextPage = () => {
-                            // Note: nextPage will call the same handler function as the initial call
-                            pagination.nextPage();
-                        };
-                    }
-                }
-            );
-
-
-        }
-
-        function addPlaces(places, map) {
-            const placesList = document.getElementById("places");
-            placesList.innerHTML = "";
-            const infowindow = new google.maps.InfoWindow();
-            for (const place of places) {
-                if (place.geometry && place.geometry.location) {
-                    const image = {
-                        url: place.icon,
-                        size: new google.maps.Size(71, 71),
-                        origin: new google.maps.Point(0, 0),
-                        anchor: new google.maps.Point(17, 34),
-                        scaledSize: new google.maps.Size(25, 25),
-                    };
-                    const marker = new google.maps.Marker({
-                        map,
-                        title: place.name,
-                        position: place.geometry.location,
-                    });
-                    google.maps.event.addListener(marker, "click", () => {
-                        const content = document.createElement("div");
-                        const nameElement = document.createElement("h2");
-                        nameElement.textContent = place.name;
-                        content.appendChild(nameElement);
-                        const placeIdElement = document.createElement("p");
-                        placeIdElement.textContent = place.open;
-                        content.appendChild(placeIdElement);
-                        const placeAddressElement = document.createElement("p");
-                        placeAddressElement.textContent = place.formatted_address;
-                        content.appendChild(placeAddressElement);
-                        infowindow.setContent(content);
-                        infowindow.open(map, marker);
-                    });
-                    const li = document.createElement("li");
-                    const ul_r = document.createElement("ul");
-                    const hr = document.createElement("hr");
-                    li.textContent = place.name;
-                    placesList.appendChild(li);
-                    placesList.appendChild(ul_r);
-                    placesList.appendChild(hr)
-                    li.addEventListener("click", () => {
-                        map.setCenter(place.geometry.location);
-                        const content = document.createElement("div");
-                        const nameElement = document.createElement("h2");
-                        nameElement.textContent = place.name;
-                        content.appendChild(nameElement);
-                        // const placeIdElement = document.createElement("p");
-                        // placeIdElement.textContent = place.place_id;
-                        // content.appendChild(placeIdElement);
-                        // const placeAddressElement = document.createElement("p");
-                        // placeAddressElement.textContent = place.formatted_address;
-                        // content.appendChild(placeAddressElement);
-                        infowindow.setContent(content);
-                        infowindow.open(map, marker);
-                    });
-
-                }
-
-            }
-        }
-
-        function locatorButtonPressed() {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    this.lat = position.coords.latitude;
-                    this.lng = position.coords.longitude;
-                    initMap()
-                    console.log(this.lat + ',' + this.lng)
-                },
-                (error) => {
-                    console.log("Error getting location");
-                }
-
-            );
-
-        }
-    </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.key') }}&callback=initMap&libraries=places&v=weekly"
-        async></script>
+    window.initMap = initMap;
+</script>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google.key') }}&callback=initMap&v=weekly"
+      defer
+    ></script>
 @endsection

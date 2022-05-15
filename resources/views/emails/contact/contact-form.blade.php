@@ -12,4 +12,3 @@ Go to Website
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent
-
