@@ -8,9 +8,25 @@
                 <div class="col-md-8 " style="height: 500">
                     <div class="row mb-5" style="height: 500px">
                         
-                        <h1 class="mt-5 ">Best way to start your fitness journey</h1>
-                        <div class="col">
+                        <h1 class="mt-5, aaa">Best way to start your <span class ="Indigo">fitness journey<span></h1>
+                        <p class="aab"> Insert some motivational shit here :) I am not sure why no centering </p>
+                        <a href='/find'><button type="button" class="findgym">Find a Gym</button>
+                        <a href='/calculator'><button type="button" class="calculator">Check out your fitness level</button>
+                        
+                        <p class="aac"> Trusted by gym rats across the country</p>
                        
+                        <h2 class="mt-5, aad"> Insert motivational quote 2 skrr </h1>
+
+                        <div class="boxed">
+                            1000+   24/7     9     
+                            <br> <span class="Subtext"> Gyms   Service     Fitness Measurements<span>
+</div>
+
+                        <div class="boxed2"> Boost your fitness experience. Start using FitMate today. 
+                            <br> <span class="Subtext2"> more shit to quote <span>
+                        
+
+                      
 
 
 
@@ -26,28 +42,13 @@
 
             <div class="text-center">
                 <div class="row mb-4">
-                    <div class="col">
-                        <button type="button" class="btn btn-dark">Login</button>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-dark">Register</button>
-                    </div>
+                
+               
 
                 </div>
-                <div class="row mb-5">
-                    <div class="col-md-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Vehicula ipsum a arcu cursus. Pellentesque dignissim enim sit amet venenatis
-                        urna cursus. Lorem dolor sed viverra ipsum nunc. Cras tincidunt lobortis feugiat vivamus at.
-                        Adipiscing elit duis tristique sollicitudin nibh sit amet.
+           
                     </div>
-                    <div class="col-md-6">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Accumsan in nisl nisi scelerisque eu. Tortor dignissim convallis aenean et
-                        tortor. Lorem ipsum dolor sit amet consectetur adipiscing. Gravida cum sociis natoque penatibus.
-                        Egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices. Amet commodo nulla facilisi
-                        nullam. Dictum at tempor commodo ullamcorper a lacus vestibulum. Interdum posuere lorem ipsum dolor
-                        sit amet consectetur adipiscing.
+                
                     </div>
                 </div>
 
