@@ -55,7 +55,7 @@
   
   
   
-  button#more {
+  /* button#more {
     width: 100%;
     padding: 1rem;
     flex-grow: 0;
@@ -74,7 +74,7 @@
     background-color: #a9a9a9;
     color: #c5d4f0;
     cursor: auto;
-  }
+  } */
 
   #map-result{
     background-color: #000000;

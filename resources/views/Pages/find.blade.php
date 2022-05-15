@@ -73,8 +73,11 @@
             </div>
 
 
-         
-            <button id="more">Load more results</button>
+            <div class="">
+                
+                <button class='btn btn-dark'id="more">Load more results</button>
+            </div>
+            
         </div>
     </div>
 
@@ -176,10 +179,11 @@
                     const card = document.createElement("div");
                     const card_body = document.createElement('div');
                     const link = document.createElement('a');
-                    const icon = document.createElement('svg');
+                    
                     p.textContent = count + '. '+place.name;
+                    
                     link.textContent = 'Search on google'
-                    count=count+1
+                    
 
 
                     
@@ -196,10 +200,20 @@
                     p.setAttribute('class','post_author mt-4')
                     card_body.appendChild(hr)
                     hr.setAttribute('style','background-color: #8f8d8d')
+
+                    
+
+               
+
+                    
                     card_body.appendChild(link)
+                    
+
+                    
+                    
                     link.setAttribute('class','post_author mt-3 mb-3')
                     link.setAttribute('href',`https://www.google.com/search?q=${place.name}&sxsrf=ALiCzsatnUpW-_OiJamWa05Lse0V5OUHZg%3A1652574541031&ei=TUmAYsfRAYKFhbIPi5eGuAk&ved=0ahUKEwiHrO7zn-D3AhWCQkEAHYuLAZcQ4dUDCA4&uact=5&oq=a&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBQgAEJECMgUIABCRAjIRCC4QgAQQsQMQgwEQxwEQ0QMyCwgAEIAEELEDEIMBMhEILhCABBCxAxCDARDHARCjAjIRCC4QgAQQsQMQgwEQxwEQowIyEQguEIAEELEDEIMBEMcBENEDSgQIQRgASgQIRhgAUABYAGDYBGgAcAF4AIABZogBZpIBAzAuMZgBAKABAcABAQ&sclient=gws-wiz`)
-
+                    count=count+1
 
                     p.addEventListener("click", () => {
                         map.setCenter(place.geometry.location);
@@ -217,7 +231,7 @@
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
 
-                        $(this).scrollTop(2);
+                        $(this).scrollTop(1);
 
                        
                     });
