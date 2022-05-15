@@ -6,27 +6,39 @@
 
 
     <div class="container"><br>
-        <div class="heder_forum mb-5">
+        <h1 class="position-absolute bottom-40 start-50 translate-middle-x">Post Create</h1>
 
-            <h1 class="header_forum" >Edit a post</h1>
+        <br>
 
-        </div>
-        <div class="">
+        <br>
+        <br>
+        <hr>
+        <br>
 
-            
+
+
+        <br>
+        <br>
+        <div class="row justify-content-center text-center">
+
+            <div class="col-4">
                 <form action="/posts/{{ $post->id }}" method="POST">
                     @csrf
                     @method('PUT')
-                    
-                        <div class="mt-4 mb-4">
-                            <input type="text" class="form-control" id="inputName" name="name" placeholder="Post title"value="{{ $post->name }}">
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" name="name" value="{{ $post->name }}">
                         </div>
-                    
-                    
-                    <div class="mt-4 mb-4">
+                    </div>
+                    <div class="mb-3 row ">
+                        <label class="col-sm-2 col-form-label ">Content</label>
 
-                    
-                            <textarea class="form-control" id="inputContent" name="content" rows="8" placeholder="Post content"value="{{ $post->content }}">{{ $post->content }}</textarea>
+                    </div>
+                    <div class="mb-3 row">
+
+                        <input type="text" class="form-control" id="inputContent" name="content"
+                            value="{{ $post->content }}">
                     </div>
                     <div>
                         <button type="submit" class="btn btn-dark form-control">Submit</button>
@@ -41,7 +53,7 @@
                             @endforeach
                     @endif
                 </div>
-            
+            </div>
 
 
 

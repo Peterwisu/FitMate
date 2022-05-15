@@ -8,13 +8,15 @@
                 <div class="col-md-8 " style="height: 500">
                     <div class="row mb-5" style="height: 500px">
                         
-                        <h1 class="mt-5 ">Best way to start your fitness journey</h1>
+                        <h1 class="mt-5 ">Welcome to our FitMate</h1>
                         <div class="col">
-                       
+                            <button type="button" class="btn btn-dark">
 
+                                <a href="home" style="color: aliceblue">
+                                    Get Start
+                                </a>
 
-
-                           
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -64,21 +66,21 @@
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.globe.min.js"></script>
     <script>
-      VANTA.NET({
-  el: "#h-bg",
-  mouseControls: true,
+      VANTA.GLOBE({
+        el: "#h-bg",
+        mouseControls: true,
+        mouseControls: true,
   touchControls: true,
   gyroControls: false,
   minHeight: 200.00,
   minWidth: 200.00,
   scale: 1.00,
   scaleMobile: 1.00,
-  color: 0x4f46E5,
-  backgroundColor: 0xffffff,
-  points: 14.00,
-  maxDistance: 10.00
-})
-</script>
+  color2: 0xaa8a8a,
+  size: 2.00,
+  backgroundColor: 0xffffff
+      })
+    </script>
 @endsection

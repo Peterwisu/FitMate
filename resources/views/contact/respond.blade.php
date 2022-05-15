@@ -16,8 +16,9 @@
                             </h4>
                         </div>
                         <div class="mt-5 mb-5">
-                            <button class="btn btn-sub">
-                                <a style="color:#fff; text-decoration:none" href="{{ url('/') }}">
+
+                            <button class="btn btn-secondary"> 
+                                <a style="color:aliceblue" href="{{ url('/') }}">
                                   Back to FitMate
                                 </a>
                             </button>

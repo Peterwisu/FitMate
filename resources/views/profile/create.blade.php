@@ -19,18 +19,18 @@
                     <div class="col-md-8 mt-4 align-content-center justify-content-center">
 
                         <div class="row mb-4">
-                            <div class="col-6 form-group">
+                            <div class="col-6">
                                 <label class=""> Name</label>
                             </div>
-                            <div class="col-6 form-group">
+                            <div class="col-6">
                                 <label class=""> {{ Auth::user()->name }}</label>
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <div class="col-6 form-group">
+                            <div class="col-6">
                                 <label class=""> Name</label>
                             </div>
-                            <div class="col-6 form-group">
+                            <div class="col-6">
                                 <label class=""> {{ Auth::user()->email }}</label>
                             </div>
                         </div>
@@ -42,10 +42,10 @@
                             @csrf
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Title</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
 
 
                                     <select class="form-control form-control-lg" name="title">
@@ -62,30 +62,24 @@
 
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Gender</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <select class="form-control form-control-lg" name="gender">
                                         <option selected value=''>select Your Gender</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
-                                        <option value="non-Binary">Non-binary/non-conforming</option>
-                                        <option value="transgender">Transgender</option>
-                                        <option value="others">Other</option>
-                                        <option value="prefer_not_tosay">Prefer not to say</option>
-                                        
-
 
                                     </select>
                                 </div>
                             </div>
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Activity Level</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <select class="form-control form-control-lg" name="act_level">
                                         <option selected value='Sedentary'>Sedentary: Little or no exercise</option>
                                         <option value="Light">Light: Exercise 1-3 times/week</option>
@@ -103,10 +97,10 @@
 
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Date of birth</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
 
                                     <input class="form-control" type="date" name="DateOfBirth">
                                 </div>
@@ -116,10 +110,10 @@
 
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group" >
+                                <div class="col-6">
                                     <label class=""> Height</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <input type="number" class="form-control" placeholder="Your height in CM"
                                         name='height'>
                                 </div>
@@ -127,10 +121,10 @@
 
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Weight</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <input type="number" placeholder="Your weight in Kg" class="form-control"
                                         name="weight">
                                 </div>
@@ -138,31 +132,28 @@
 
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Neck</label>
                                 </div>
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <input type="number" placeholder="Your neck in CM" class="form-control" name='neck'>
                                 </div>
                             </div>
 
                             <div class="row mb-2">
-                                <div class="col-6 form-group">
+                                <div class="col-6">
                                     <label class=""> Waist</label>
-                                </div> 
-                                <div class="col-6 form-group">
+                                </div>
+                                <div class="col-6">
                                     <input type="number" placeholder="Your waist in CM" class="form-control" name="waist">
                                 </div>
                             </div>
 
-                            <div class="row mb-2 mt-4 form-group">
-                                <button type="submit" class="btn btn-dark form-control">Get Started</button>
+                            <div class="row mb-2 mt-4">
+                                <button type="submit" class="btn btn-dark form-control">Submit</button>
                             </div>
 
-                            <div class="">
 
-                                <a href="/">Skipping adding details</a>
-                            </div>
 
 
 

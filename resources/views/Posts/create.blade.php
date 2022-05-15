@@ -6,42 +6,44 @@
 
 
     <div class="container"><br>
-        <div class="heder_forum mb-5">
+        <h1 class="position-absolute bottom-40 start-50 translate-middle-x">Post Create</h1>
 
-            <h1 class="header_forum" >Add a post</h1>
+        <br>
 
-        </div>
-        
-        <div class=" ">
+        <br>
+        <br>
+        <hr>
+        <br>
 
-            
+
+
+        <br>
+        <br>
+        <div class="row justify-content-center text-center">
+
+            <div class="col-4">
                 <form action="/posts" method="POST">
                     @csrf
 
-                  
-                        <div class="mt-4 mb-4">
-                            <input type="text" class="form-control" id="inputName" name="name" placeholder="Post title">
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" name="name">
                         </div>
-                 
-                    
-                    <div class="mt-4 mb-4">
+                    </div>
+                    <div class="mb-3 row ">
+                        <label class="col-sm-2 col-form-label ">Content</label>
+
+                    </div>
+                    <div class="mb-3 row">
 
                        <!--- <input type="text" class="form-control" id="inputContent" name="content"> ---->
-                        <textarea class="form-control" id="inputContent" name="content" rows="8" placeholder="Post content"></textarea>
+                        <textarea class="form-control" id="inputContent" name="content" rows="3"></textarea>
                     </div>
-
-                    <div class="row">
-                        <div class="mt-2 mb-4" style="width: 104px;
-                    height: 50px;">
-                        <button type="submit" class="btn btn-dark form-control" style="font-weight: 500;
-                        width: 104px;
-height: 50px;font-size: 16px;">Submit</button>
+                    <div>
+                        <button type="submit" class="btn btn-dark form-control">Submit</button>
                     </div>
-                    </div>
-                    
                 </form>
-
-
                 <div class=" mt-5" role="alert" id='error'>
                     @if ($errors->any())
                             @foreach ($errors->all() as $err)
@@ -51,7 +53,7 @@ height: 50px;font-size: 16px;">Submit</button>
                             @endforeach
                     @endif
                 </div>
-           
+            </div>
 
 
 
