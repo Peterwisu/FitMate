@@ -16,7 +16,7 @@
 
                 <div class="w-75" style="padding-bottom: 150px">
                     <p class="aac"> Trusted by gym rats across the country</p>
-                    <p class="mt-5, aab p-1 pb-3">Let the numbers speak for themselves.</p>
+                    <p class="mt-5 aab p-1 pb-3">Let the numbers speak for themselves.</p>
                     <div class="d-flex justify-content-around boxed">
                         <div>
                             <p>1000+</p><p class="Subtext"> Gyms</p>

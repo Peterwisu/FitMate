@@ -12,6 +12,10 @@
             @yield('content')
         </main>
     </div>
+
+    @if (auth()->check())
+    @include('partials.chat')
+    @endif
     <hr>
     @include('partials.footer')
 
