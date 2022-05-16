@@ -60,7 +60,7 @@ $('#message_send').click(function (e){
 
     }
 
-    console.log(options)
+
     axios(options);
   
 });
@@ -68,7 +68,7 @@ $('#message_send').click(function (e){
 
 window.Echo.channel('chat').listen('.message',(e)=>{
     
-    console.log(e);
+    console.log("test", e);
 
     if(e.id ==user_id.value){
         $('#messages').append(`
