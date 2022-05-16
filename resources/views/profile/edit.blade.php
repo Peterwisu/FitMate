@@ -77,7 +77,7 @@
                                     <option value="transgender">Transgender</option>
                                     <option value="others">Other</option>
                                     <option value="prefer_not_tosay">Prefer not to say</option>
-                                    
+
 
 
                                 </select>
@@ -110,7 +110,7 @@
                                     <option value="Active">Active: Daily exercise 3-4 times/week</option>
                                     <option value="VeryActive">Very Active: Intense exercise 6-7 times/week </option>
                                     <option value="ExtremelyActive">Extremely Active: Very intense exercise daily, or physical job</option>
-                 
+
 
                                 </select>
                             </div>
@@ -158,7 +158,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-2 mt-4">
+                        <div class="row mb-2 mt-4 w-50" style="margin: 0 auto">
                             <button type="submit" class="btn btn-dark form-control">Submit</button>
                         </div>
 

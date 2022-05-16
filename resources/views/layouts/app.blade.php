@@ -8,11 +8,10 @@
         @include('partials.navbar')
 
         <!-- class="py-4" --->
-        <main class="">
+        <main class="main-content">
             @yield('content')
         </main>
     </div>
-    <hr>
     @include('partials.footer')
 
     <!-- Ajax -->

@@ -74,7 +74,7 @@
                                         <option value="transgender">Transgender</option>
                                         <option value="others">Other</option>
                                         <option value="prefer_not_tosay">Prefer not to say</option>
-                                        
+
 
 
                                     </select>
@@ -149,19 +149,18 @@
                             <div class="row mb-2">
                                 <div class="col-6 form-group">
                                     <label class=""> Waist</label>
-                                </div> 
+                                </div>
                                 <div class="col-6 form-group">
                                     <input type="number" placeholder="Your waist in CM" class="form-control" name="waist">
                                 </div>
                             </div>
 
-                            <div class="row mb-2 mt-4 form-group">
+                            <div class="row mb-2 mt-4 form-group w-50 " style="margin: 0 auto">
                                 <button type="submit" class="btn btn-dark form-control">Get Started</button>
                             </div>
 
-                            <div class="">
-
-                                <a href="/">Skipping adding details</a>
+                            <div class="text-center">
+                                <a href="/" class="Indigo">Skip adding details</a>
                             </div>
 
 

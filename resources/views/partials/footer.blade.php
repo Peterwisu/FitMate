@@ -1,7 +1,6 @@
-<footer class="container bg-light text-center text-lg-start py-2">
+<footer class="container bg-light text-center text-lg-start  footer-display">
     <!-- Copyright -->
-    <!-- <hr> -->
-    <div class="row">
+    <div class="ro py-2">
         <div class="d-flex justify-space-between">
             <div class="footer-menu">
                 <a href="/privacy">Privacy Policy</a>

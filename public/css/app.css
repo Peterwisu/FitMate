@@ -84,6 +84,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-x:hidden;
+    height: 100%;
 }
 
 hr {
@@ -2352,7 +2353,7 @@ progress {
 .form-control-lg {
   min-height: calc(1.6em + 1rem + 2px);
   padding: 0.5rem 1rem;
-  font-size: 1.125rem;
+  font-size: 0.9rem;
   border-radius: 0.3rem;
 }
 .form-control-lg::-webkit-file-upload-button {
@@ -11451,4 +11452,26 @@ padding: 13px 25px;
     .Subtext {
         font-size: 15px;
     }
+}
+
+@media (max-width: 767px) {
+
+    .nav-item {
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        z-index: 99999;
+        flex-direction: column;
+        background: #fff;
+        padding-bottom: 20px;    }
+}
+
+.main-content {
+    min-height: 80vh;
+}
+
+.footer-display {
+    height: 50px;
 }

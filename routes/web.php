@@ -21,7 +21,6 @@ use App\Http\Controllers\HealthController;
 */
 
 Route::get('/',[HomeController::class,'index']);
-Route::get('/about',[HomeController::class,'about']);
 /**  Google map api */
 Route::get('/find',[HomeController::class,'find']);
 
