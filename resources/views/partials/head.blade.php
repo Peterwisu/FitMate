@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="base_url" content="{{ url('/') }}">
 
-    <title> FitMate-Demo</title>
+    <title>FitMate</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,10 +23,10 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     <link href="{{ asset('css/googlemap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/chat.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mainpage.css') }}" rel="stylesheet">
 
 
 </head>

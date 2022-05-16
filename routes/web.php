@@ -12,6 +12,8 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HealthController;
 use App\Events\Message;
+use App\Http\Controllers\ChatController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,23 +56,11 @@ Route::resource('/posts',PostController::class);
 Route::resource('/comment',CommentsController::class);
 
 
-Route::get('/chat',function (){
+/** Live chat */
 
-    return view('chat.index');
-});
+Route::get('/chat',[ChatController::class,'index']);
 
-Route::post('/send-message',function(Request $request){
-
-
-
-    event(new Message(
-        $request->input('username'),
-        $request->input('message')));
-
-
-        return ["success"=>true];
-
-});
+Route::post('/send-message',[ChatController::class,'send']);
 
 
 Auth::routes(['verify'=>true]);

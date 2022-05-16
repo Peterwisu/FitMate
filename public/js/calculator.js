@@ -7,10 +7,10 @@ var waist=null;
 var weight=null;
 
 $('document').ready(
-
+    
     
     $('#calculate').click((e)=>{
-        
+
         e.preventDefault();
         DOB= age($('#DOB').val());
         height = $('#height').val();
@@ -203,8 +203,6 @@ function BMR(gender,weight,age,height){
 
     return bmr
 }
-
-
 
 
 // function Calo_WL(){

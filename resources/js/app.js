@@ -14,10 +14,11 @@ require('./bootstrap');
 const message_el = document.getElementById("messages");
 const username_input = document.getElementById("username");
 const message_input = document.getElementById('message_input');
+const user_id = document.getElementById("user_id");
 const message_form = document.getElementById('message_form');
 
 
-message_form.addEventListener('submit',function (e){
+$('#message_send').click(function (e){
 
      e.preventDefault();
     e.stopPropagation();
@@ -47,8 +48,10 @@ message_form.addEventListener('submit',function (e){
         method: 'post',
         url:'/send-message',
         data:{
+            id: user_id.value,
             username: username_input.value,
             message: message_input.value
+
         },
         TransformResponse: [(data)=>{
 
@@ -57,15 +60,43 @@ message_form.addEventListener('submit',function (e){
 
     }
 
-
+    console.log(options)
     axios(options);
   
 });
 
 
 window.Echo.channel('chat').listen('.message',(e)=>{
-
+    
     console.log(e);
 
-    $('#messages').append(`<div class="message"><strong>${e.username}</strong>: ${e.message}</div>`)
+    if(e.id ==user_id.value){
+        $('#messages').append(`
+    
+        <div class="d-flex align-items-center text-right justify-content-end ">
+        <div class="pr-2">
+            <strong class="name">${e.username}</strong>
+            <p class="current_user ">${e.message}</p>
+        </div>
+        
+        
+    </div>
+        `)
+    }else{
+
+        $('#messages').append(`
+        
+        <div class="d-flex align-items-center">
+        
+        <div class="pr-2 pl-1">
+        <span class="name">${e.username}</span>
+        <p class="notcurrent_user">${e.message}</p>
+        </div>
+    </div>
+        `);
+
+
+    }
+
+  
 });

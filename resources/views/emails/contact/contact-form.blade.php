@@ -3,7 +3,8 @@
 
 <strong> Name</strong> {{$data['name']}}<br>
 <strong> Email</strong> {{$data['email']}}<br>
-<strong> Message</strong> <br>
+<strong> Message</strong> {{$data['message']}}<br>
+<strong> Phone</strong>{{$data['phone']}}<br>
 {{$data['message']}}
 @component('mail::button', ['url' => ''])
 Go to Website
