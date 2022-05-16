@@ -16,13 +16,14 @@ const username_input = document.getElementById("username");
 const message_input = document.getElementById('message_input');
 const user_id = document.getElementById("user_id");
 const message_form = document.getElementById('message_form');
-
+const url = document.querySelector('meta[name="base_url"]').content +'/send-message'
+const csrf_token = document.querySelector('meta[name="csrf-token"]').content
 
 $('#message_send').click(function (e){
 
      e.preventDefault();
     e.stopPropagation();
-
+    console.log(url)
     let has_errors =false;
 
     if( username_input.value == ''){
@@ -46,11 +47,15 @@ $('#message_send').click(function (e){
     const options = {
 
         method: 'post',
-        url:'/send-message',
+        url:url,
+        headers: {
+            'X-CSRF-Token': csrf_token
+        },
         data:{
             id: user_id.value,
             username: username_input.value,
-            message: message_input.value
+            message: message_input.value,
+            _token: csrf_token
 
         },
         TransformResponse: [(data)=>{
