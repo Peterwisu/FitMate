@@ -8,7 +8,7 @@
         @include('partials.navbar')
 
         <!-- class="py-4" --->
-        <main class="">
+        <main class="main-content">
             @yield('content')
         </main>
     </div>
@@ -16,7 +16,7 @@
     @if (auth()->check())
     @include('partials.chat')
     @endif
-    <hr>
+
     @include('partials.footer')
 
     <!-- Ajax -->

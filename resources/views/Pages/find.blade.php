@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class='container'>
-       
+
         <div id="container">
             <div id="map" class=""></div>
         </div>
@@ -63,21 +63,21 @@
             </p>
             <p class="post_name">
                 The result are arrange in order of nearest places
-                
+
             </p>
         </div>
         <div  class='text-center'>
             <div id='places' class="row mx-5">
-              
+
 
             </div>
 
 
             <div class="">
-                
+
                 <button class='btn btn-dark'id="more">Load more results</button>
             </div>
-            
+
         </div>
     </div>
 
@@ -171,47 +171,47 @@
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
                     });
-                    
+
                     const p = document.createElement("p");
-                  
+
                     const hr = document.createElement("hr");
                     const col = document.createElement("div");
                     const card = document.createElement("div");
                     const card_body = document.createElement('div');
                     const link = document.createElement('a');
-                    
+
                     p.textContent = count + '. '+place.name;
-                    
+
                     link.textContent = 'Search on google'
-                    
 
 
-                    
+
+
                     placesList.appendChild(col);
                     col.setAttribute('class','col-md-6 mb-4 mt-4')
-                   
+
                     col.appendChild(card)
                     card.setAttribute('class', 'card')
                     card.setAttribute('class','card_shadow')
-                    
+
                     card.appendChild(card_body);
-                    card_body.setAttribute('class','card body')
+                    card_body.setAttribute('class','card body align-items-center')
                     card_body.appendChild(p)
                     p.setAttribute('class','post_author mt-4')
                     card_body.appendChild(hr)
                     hr.setAttribute('style','background-color: #8f8d8d')
 
-                    
 
-               
 
-                    
+
+
+
                     card_body.appendChild(link)
-                    
 
-                    
-                    
-                    link.setAttribute('class','post_author mt-3 mb-3')
+
+
+
+                    link.setAttribute('class','post_author mt-3 mb-3 btn-sub text-white w-50 ')
                     link.setAttribute('href',`https://www.google.com/search?q=${place.name}&sxsrf=ALiCzsatnUpW-_OiJamWa05Lse0V5OUHZg%3A1652574541031&ei=TUmAYsfRAYKFhbIPi5eGuAk&ved=0ahUKEwiHrO7zn-D3AhWCQkEAHYuLAZcQ4dUDCA4&uact=5&oq=a&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBQgAEJECMgUIABCRAjIRCC4QgAQQsQMQgwEQxwEQ0QMyCwgAEIAEELEDEIMBMhEILhCABBCxAxCDARDHARCjAjIRCC4QgAQQsQMQgwEQxwEQowIyEQguEIAEELEDEIMBEMcBENEDSgQIQRgASgQIRhgAUABYAGDYBGgAcAF4AIABZogBZpIBAzAuMZgBAKABAcABAQ&sclient=gws-wiz`)
                     count=count+1
 
@@ -221,7 +221,7 @@
                         const nameElement = document.createElement("h2");
                         nameElement.textContent = place.name;
                         content.appendChild(nameElement);
-                       
+
                         // const placeIdElement = document.createElement("p");
                         // placeIdElement.textContent = place.place_id;
                         // content.appendChild(placeIdElement);
@@ -233,7 +233,7 @@
 
                         $(this).scrollTop(1);
 
-                       
+
                     });
 
                 }

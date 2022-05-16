@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="container mb-5 mt-5hait">
+<div class="container mb-5 mt-5">
     <div class="row justify-content-center" style="align-items: center;">
     <div class="col-md-5">
         <h1 class="contact-heading">Contact FitMate</h2>

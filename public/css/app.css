@@ -11286,3 +11286,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+/*.footer-display {*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    min-width: 100%;*/
+/*}*/
+.main-content {
+    min-height: 80vh;
+}

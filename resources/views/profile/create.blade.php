@@ -158,13 +158,12 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-2 mt-4 form-group">
+                            <div class="row mb-2 mt-4 form-group w-50 " style="margin: 0 auto">
                                 <button type="submit" onclick="validatecal();" class="btn btn-dark form-control">Get Started</button>
                             </div>
 
-                            <div class="">
-
-                                <a href="/">Skipping adding details</a>
+                            <div class="text-center">
+                                <a href="/" class="Indigo">Skip adding details</a>
                             </div>
 
 
@@ -178,7 +177,7 @@
             </div>
         </div>
         <script>
-            
+
 
             function validatecal()  {
 
@@ -216,8 +215,8 @@ $("#vali_cal").validate({
         waist:{
             required :true,
             range: [40, 130]
-            
-            
+
+
         }
     }, //message display if the form submit does not pass a requirement rules
     messages: {
@@ -256,7 +255,7 @@ $("#vali_cal").validate({
 
 });
 }
-            
+
         </script>
         <!---- display error message from server side validation --->
         @if ($errors->any())

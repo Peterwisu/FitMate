@@ -26,7 +26,6 @@ use App\Http\Controllers\ChatController;
 */
 
 Route::get('/',[HomeController::class,'index']);
-Route::get('/about',[HomeController::class,'about']);
 /**  Google map api */
 Route::get('/find',[HomeController::class,'find']);
 
