@@ -6,7 +6,7 @@
 <strong> Message</strong> {{$data['message']}}<br>
 <strong> Phone</strong>{{$data['phone']}}<br>
 {{$data['message']}}
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => 'https://fitmate-application.herokuapp.com/'])
 Go to Website
 @endcomponent
 
