@@ -2,39 +2,82 @@
 
 
 @section('content')
-    <div class="container mb-5">
+    <div class="container mb-5 mt-3">
         <div class="row justify-content-center">
-            <div class="col-md-8 text-center mt-4">
-                <h1 class="">Find nearest Fitness Center nears you</h1>
+            <div class="">
+                <p class="header_forum">FitMte Gym Finder</p>
             </div>
 
-            <div class=" row text-center mt-5">
-                <h3><button class='btn btn-dark' >
-                    <a class="" onclick="locatorButtonPressed()" style="color: white">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-up-right-circle-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8zm5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707l-4.096 4.096z" />
-                        </svg>
-                        Click here to search fitness Center near you
-                    </a>
-                </button>
-                </h3>
+            <div class="mt-4" >
+                <div class="card card_shadow" id=''>
+                    <div class="card body ">
+
+                        <div class="mx-4 mt-4">
+                            <p class="forum_text" style="color:black">
+                                Find Your Nearest Gym
+                            </p>
+                        </div>
+
+                        <div class="mx-4 mt-1">
+                            <p class="post_name" style="font-weight: 400">
+                                Tell us your location we will show you what nearest optioms do you have
+                            </p>
+                        </div>
+
+                        <div class="text-center mt-2 mb-4">
+
+                            <button class='btn btn-dark' onclick="locatorButtonPressed()" style="width: 101px;
+                            height: 38px;">
+                                <p class="" style="color: white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+
+
+                                    Search
+                                </p>
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+
+
+
+
         </div>
     </div>
-    <div id="container" class='container'>
+    <div class='container'>
        
-        <div id="map" class=""></div>
-        <div id="sidebar" class='text-center'>
-            <div id='map-result'>
-                <h2 class="mt-3 mb-3">Results</h2>
+        <div id="container">
+            <div id="map" class=""></div>
+        </div>
+        <div class="mt-5 text-center ">
+            <p class="forum_all_post mx-5">
+                Results
+            </p>
+            <p class="post_name">
+                The result are arrange in order of nearest places
                 
+            </p>
+        </div>
+        <div  class='text-center'>
+            <div id='places' class="row mx-5">
+              
+
             </div>
 
 
-            <ul id="places"></ul>
-            <button id="more" >Load more results</button>
+            <div class="">
+                
+                <button class='btn btn-dark'id="more">Load more results</button>
+            </div>
+            
         </div>
     </div>
 
@@ -99,6 +142,7 @@
             const placesList = document.getElementById("places");
             placesList.innerHTML = "";
             const infowindow = new google.maps.InfoWindow();
+            count =1
             for (const place of places) {
                 if (place.geometry && place.geometry.location) {
                     const image = {
@@ -127,19 +171,57 @@
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
                     });
-                    const li = document.createElement("li");
-                    const ul_r = document.createElement("ul");
+                    
+                    const p = document.createElement("p");
+                  
                     const hr = document.createElement("hr");
-                    li.textContent = place.name;
-                    placesList.appendChild(li);
-                    placesList.appendChild(ul_r);
-                    placesList.appendChild(hr)
-                    li.addEventListener("click", () => {
+                    const col = document.createElement("div");
+                    const card = document.createElement("div");
+                    const card_body = document.createElement('div');
+                    const link = document.createElement('a');
+                    
+                    p.textContent = count + '. '+place.name;
+                    
+                    link.textContent = 'Search on google'
+                    
+
+
+                    
+                    placesList.appendChild(col);
+                    col.setAttribute('class','col-md-6 mb-4 mt-4')
+                   
+                    col.appendChild(card)
+                    card.setAttribute('class', 'card')
+                    card.setAttribute('class','card_shadow')
+                    
+                    card.appendChild(card_body);
+                    card_body.setAttribute('class','card body')
+                    card_body.appendChild(p)
+                    p.setAttribute('class','post_author mt-4')
+                    card_body.appendChild(hr)
+                    hr.setAttribute('style','background-color: #8f8d8d')
+
+                    
+
+               
+
+                    
+                    card_body.appendChild(link)
+                    
+
+                    
+                    
+                    link.setAttribute('class','post_author mt-3 mb-3')
+                    link.setAttribute('href',`https://www.google.com/search?q=${place.name}&sxsrf=ALiCzsatnUpW-_OiJamWa05Lse0V5OUHZg%3A1652574541031&ei=TUmAYsfRAYKFhbIPi5eGuAk&ved=0ahUKEwiHrO7zn-D3AhWCQkEAHYuLAZcQ4dUDCA4&uact=5&oq=a&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBQgAEJECMgUIABCRAjIRCC4QgAQQsQMQgwEQxwEQ0QMyCwgAEIAEELEDEIMBMhEILhCABBCxAxCDARDHARCjAjIRCC4QgAQQsQMQgwEQxwEQowIyEQguEIAEELEDEIMBEMcBENEDSgQIQRgASgQIRhgAUABYAGDYBGgAcAF4AIABZogBZpIBAzAuMZgBAKABAcABAQ&sclient=gws-wiz`)
+                    count=count+1
+
+                    p.addEventListener("click", () => {
                         map.setCenter(place.geometry.location);
                         const content = document.createElement("div");
                         const nameElement = document.createElement("h2");
                         nameElement.textContent = place.name;
                         content.appendChild(nameElement);
+                       
                         // const placeIdElement = document.createElement("p");
                         // placeIdElement.textContent = place.place_id;
                         // content.appendChild(placeIdElement);
@@ -148,6 +230,10 @@
                         // content.appendChild(placeAddressElement);
                         infowindow.setContent(content);
                         infowindow.open(map, marker);
+
+                        $(this).scrollTop(1);
+
+                       
                     });
 
                 }
