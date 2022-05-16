@@ -6,23 +6,23 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #eee; 
+  background: #eee;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 
 .wrapper{
-   
-  
+
+
     justify-content: center;
     align-items: center;
     background-color: #651FFF;
@@ -32,7 +32,10 @@
 .main{
 	background-color: #eee;
 	width: 600px;
-	position: relative;
+	position: fixed;
+    right: 15px;
+    bottom: 30px;
+    z-index: 999999;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding: 6px 0px 0px 0px;
@@ -86,14 +89,14 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
-.form-control{
-	font-size: 12px;
-	font-weight: 400;
-	width: 230px;
-	height: 30px;
-	border: none;
+/*.form-control{*/
+/*	font-size: 12px;*/
+/*	font-weight: 400;*/
+/*	width: 230px;*/
+/*	height: 30px;*/
+/*	border: none;*/
+/*}*/
 
-}
 form-control:focus{
 	box-shadow: none;
 	overflow: hidden;
@@ -104,7 +107,7 @@ form-control:focus{
 }
 .icon1{
 	color: #7C4DFF !important;
-	font-size: 18px !important;	
+	font-size: 18px !important;
 	cursor: pointer;
 }
 
@@ -120,7 +123,7 @@ form-control:focus{
 
 
 .icondiv{
-	
+
 	border-radius: 50%;
 	width: 15px;
 	height: 15px;
@@ -131,10 +134,28 @@ form-control:focus{
 }
 
 #message_form{
-	/* display: flex; */
+	 display: flex;
 	margin-left: 3px;
 }
 
 #message_send{
 	margin-left: 10px;
+}
+
+.chat-btn {
+    /*display: flex;*/
+    /*justify-content: end;*/
+    position: fixed;
+    right: 15px;
+    bottom: 30px;
+    margin-right: 20px;
+    z-index: 999999;
+}
+
+.close-chat-btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: -330px;
+    right: 5px;
 }
