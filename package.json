@@ -1,9 +1,6 @@
 {
     "private": true,
-    "engines": {
-        "node": "7.6.0",
-        "yarn": "0.21.3"
-      },"scripts": {
+    "scripts": {
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
