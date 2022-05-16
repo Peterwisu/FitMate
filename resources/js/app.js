@@ -47,7 +47,7 @@ $('#message_send').click(function (e){
     const options = {
 
         method: 'post',
-        url:url,
+        url:'/send-message',
         headers: {
             'X-CSRF-Token': csrf_token
         },
@@ -55,7 +55,7 @@ $('#message_send').click(function (e){
             id: user_id.value,
             username: username_input.value,
             message: message_input.value,
-            _token: csrf_token
+             _token: csrf_token
 
         },
         TransformResponse: [(data)=>{
