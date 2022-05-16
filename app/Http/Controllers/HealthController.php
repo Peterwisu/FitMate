@@ -32,14 +32,15 @@ class HealthController extends Controller
     {
 
         $health= Health::find($id);
-        if (! Gate::allows('update-health', $health)) {
-            abort(403);
-        }
+        
 
         // if profile does not exist in database then redirect it to create page
         if($health == null){
             return redirect('profile/create');
         }else{
+            if (! Gate::allows('update-health', $health)) {
+                abort(403);
+            }
             //if health does exist in database then show profile page
             return view('health.show')->with('health',$health);
         }

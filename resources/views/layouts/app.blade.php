@@ -12,6 +12,11 @@
             @yield('content')
         </main>
     </div>
+
+    @if (auth()->check())
+    @include('partials.chat')
+    @endif
+
     @include('partials.footer')
 
     <!-- Ajax -->

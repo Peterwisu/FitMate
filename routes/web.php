@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentsController;
@@ -9,6 +11,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HealthController;
+use App\Events\Message;
+use App\Http\Controllers\ChatController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,8 +55,11 @@ Route::resource('/posts',PostController::class);
 Route::resource('/comment',CommentsController::class);
 
 
+/** Live chat */
 
+Route::get('/chat',[ChatController::class,'index']);
 
+Route::post('/send-message',[ChatController::class,'send']);
 
 
 Auth::routes(['verify'=>true]);

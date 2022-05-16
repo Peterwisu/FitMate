@@ -16,31 +16,31 @@
                 <div class="mt-4">
                     <div class="text-center">
 
-                        <form action="/contact" method="POST">
+                        <form action="/contact" method="POST" id="vali_con">
                             @csrf
                             <div class="mb-3">
-                                <input type="text" name='name'class="form-control" placeholder="Full name">
+                                <input type="text" name='name'class="form-control" placeholder="Full name" required>
 
 
                             </div>
                             <div class="mb-3">
-                                <input type="email" name='email'class="form-control" placeholder="Email">
+                                <input type="email" name='email'class="form-control" placeholder="Email " required>
 
 
                             </div>
                             <div class="mb-3">
-                            <input type="text" name='Phone'class="form-control" placeholder="Phone">
+                            <input type="phone" name='phone'class="form-control" placeholder="Phone" required>
                             </div>
 
                             <div class="mb-3">
 
-                                <textarea class="form-control" name='message'placeholder="Message" rows="3"></textarea>
+                                <textarea class="form-control" name='message'placeholder="Message" rows="3" required></textarea>
 
 
                             </div>
                             <div class="row">
                                 <div class="col-md-8" style="text-align:left;">
-                                    <button type="submit" class="btn btn-sub">Submit</button>
+                                    <button type="submit" onclick="validatecal()"class="btn btn-sub">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -67,4 +67,47 @@
             </div>
         </div>
     </div>
+    <script>
+        function validatecal() {
+
+            //validate a form with id contact_form
+            $("#vali_con").validate({
+
+                //rule for validation fields
+                rules: {
+                    name: {
+                        required: true
+                    },
+                    email: {
+                        required: true
+
+                    },
+                    phone: {
+                        required: true
+                    },
+                    message: {
+                        required: true
+                    },
+                   
+                }, //message display if the form submit does not pass a requirement rules
+                messages: {
+                    name: {
+                        required: "Name is required"
+                    },
+                    email: {
+                        required: "Email is required"
+
+                    },
+                    phone: {
+                        required: 
+                    },
+                    message: {
+                        required: true
+                    },
+
+                },
+
+            });
+        }
+    </script>
 @endsection

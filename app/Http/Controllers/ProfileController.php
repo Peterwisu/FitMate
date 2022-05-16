@@ -114,14 +114,15 @@ class ProfileController extends Controller
     {
 
         $profile = Profile::find($id);
-        if (! Gate::allows('update-profile', $profile)) {
-            abort(403);
-        }
+        
 
         // if profile does not exist in database then redirect it to create page
         if($profile == null){
             return redirect('profile/create');
         }else{
+            if (! Gate::allows('update-profile', $profile)) {
+                abort(403);
+            }
             //if profile does exist in database then show profile page
             return view('profile.show')->with('profile',$profile);
         }
@@ -164,10 +165,10 @@ class ProfileController extends Controller
             'DateOfBirth'    => 'required|date_format:Y-m-d|before:today',
             'title'          => 'required',
             'gender'         => 'required',
-            'height'         => 'required|digits_between:1,3',
-            'weight'         => 'required|digits_between:1,3',
-            'neck'           => 'required|digits_between:1,3',
-            'waist'          => 'required|digits_between:1,3',
+            'height'         => 'required',
+            'weight'         => 'required',
+            'neck'           => 'required',
+            'waist'          => 'required',
             'act_level'      => 'required',
 
         ]);
