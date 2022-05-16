@@ -48,9 +48,7 @@ $('#message_send').click(function (e){
 
         method: 'post',
         url:'/send-message',
-        headers: {
-            'X-CSRF-Token': csrf_token
-        },
+       
         data:{
             id: user_id.value,
             username: username_input.value,
