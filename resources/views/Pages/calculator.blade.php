@@ -19,7 +19,7 @@
                 </p>
             </div>
         </div>
-        <form id="vali_cal">
+        <form id="vali">
             <div class="row mt-2 mb-2">
                 <div class="col-md-6">
                     <label>Year of Birth</label>
@@ -35,7 +35,7 @@
             <div class="row mt-2 mb-2">
                 <div class="col-md-6">
                     <label>Gender</label>
-                    <select class="form-control form-control-lg" name="gender" id='gender' required>
+                    <select class="form-control " name="gender" id='gender' required>
                         <option selected value=''>select Your Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -58,7 +58,7 @@
             <div class="row mt-2 mb-2">
                 <div class="col-md-6">
                     <label>Activity Level</label>
-                    <select class="form-control form-control-lg" name="act_level" id='act_level' required>
+                    <select class="form-control " name="act_level" id='act_level' required>
                         <option value=''>Please Select one</option>
                         <option value='Sedentary'>Sedentary: Little or no exercise</option>
                         <option value="Light">Light: Exercise 1-3 times/week</option>
@@ -78,20 +78,10 @@
                         required>
                 </div>
             </div>
-            <div class="row mt-2 mb-2">
-                <div class="col-md-6">
-                    <button class="btn btn-secondary"> Connect to Fitness API </button>
-
-                </div>
-                <div class="col-md-6">
-                    <label>Weight</label>
-                    <input type="number" placeholder="Your weight in Kg" class="form-control" name="weight" id="weight"
-                        required>
-                </div>
-            </div>
+           
             <div class="row  mt-5 mb-5">
                 <div class="col-md-12 ">
-                    <button class="btn btn-primary" onclick="validatecal()" id="calculate"> Calculate !</button>
+                    <button  type='button' class="btn btn-sub"  id="calculate"> Calculate !</button>
                 </div>
             </div>
         </form>
@@ -134,17 +124,7 @@
                     </div>
                 </div>
 
-                <!---
-                    <div class="row mt-1 mb-1" id="table">
-                        <div class="col-md-7">
-                            <p>Ideal Weight</p>
-                        </div>
-                        <div class="col-md-5" id="IdealBodyFat">
-
-                        </div>
-                    </div>
-                -->
-
+                
 
                 <div class="row mt-1 mb-1" id="table">
                     <div class="col-md-7">
@@ -166,37 +146,8 @@
                 </div>
 
 
-                <!------
-                    <div class="row mt-1 mb-1" id="table">
-                        <div class="col-md-7">
-                            <p>Calories for Weight loss</p>
-                        </div>
-                        <div class="col-md-5" id="Calo_WL">
-
-                        </div>
-                    </div>
-
-
-                    <div class="row mt-1 mb-1" id="table">
-                        <div class="col-md-7">
-                            <p>Calories for Maintenance</p>
-                        </div>
-                        <div class="col-md-5" id="Calo_MT">
-
-                        </div>
-                    </div>
-
-
-                    <div class="row mt-1 mb-1" id="table">
-                        <div class="col-md-7">
-                            <p>Calores for Weight Gain</p>
-                        </div>
-                        <div class="col-md-5" id="Calo_WG">
-
-                        </div>
-                    </div>
-                -->
-
+                
+        
 
             </div>
             <div class="col-md-6">
@@ -219,16 +170,7 @@
                     </ul>
                 </div>
 
-                <div class="row mt-2 mb-2">
-
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt laoreet vitae aliquam. Dui odio
-                    orci senectus orci, tristique nulla augue. Magna at mi malesuada viverra ut. Pretium rhoncus, massa
-                    montes, lacus, senectus consectetur. Facilisis
-                </div>
-
-
-
+                
             </div>
 
 
@@ -246,82 +188,5 @@
 
     </div>
 
-    <script>
-        function validatecal() {
-
-            //validate a form with id contact_form
-            $("#vali_cal").validate({
-
-                //rule for validation fields
-                rules: {
-                    title: {
-                        required: true
-                    },
-                    gender: {
-                        required: true
-
-                    },
-                    act_level: {
-                        required: true
-                    },
-                    DateOfBirth: {
-                        required: true
-                    },
-                    height: {
-                        required: true,
-                        range: [60, 260]
-
-                    },
-                    weight: {
-                        required: true,
-                        range: [30, 200]
-                    },
-                    neck: {
-                        required: true,
-                        range: [15, 50]
-                    },
-                    waist: {
-                        required: true,
-                        range: [40, 130]
-
-
-                    }
-                }, //message display if the form submit does not pass a requirement rules
-                messages: {
-                    title: {
-                        required: "Title is required"
-                    },
-                    gender: {
-                        required: "Gender is required"
-
-                    },
-                    act_level: {
-                        required: "Activity level is required"
-                    },
-                    DateOfBirth: {
-                        required: "Date of Birth is required"
-                    },
-                    height: {
-                        required: "Height is required",
-                        range: "Out of range 60-260"
-
-                    },
-                    weight: {
-                        required: "Weight is required",
-                        range: "Out of range 30-200"
-                    },
-                    neck: {
-                        required: "Neck is required",
-                        range: "Out of range 15-30"
-                    },
-                    waist: {
-                        required: "Wasit is required",
-                        range: "Out of range 40-130"
-                    }
-
-                },
-
-            });
-        }
-    </script>
+    <script src="{{ asset('js/calculator.js') }}" defer></script>
 @endsection

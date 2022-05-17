@@ -22,8 +22,8 @@ const csrf_token = document.querySelector('meta[name="csrf-token"]').content
 $('#message_send').click(function (e){
 
      e.preventDefault();
-    e.stopPropagation();
-    console.log(url)
+
+
     let has_errors =false;
 
     if( username_input.value == ''){
@@ -46,7 +46,7 @@ $('#message_send').click(function (e){
 
     const options = {
 
-        method: 'post',
+        method: 'POST',
         url:'/send-message',
        
         data:{
@@ -63,7 +63,7 @@ $('#message_send').click(function (e){
 
     }
 
-
+        
     axios(options);
   
 });
