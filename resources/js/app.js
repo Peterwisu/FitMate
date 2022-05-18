@@ -19,59 +19,60 @@ const message_form = document.getElementById('message_form');
 const url = document.querySelector('meta[name="base_url"]').content +'/send-message'
 const csrf_token = document.querySelector('meta[name="csrf-token"]').content
 
-// $('#message_send').click(function (e){
+$('#message_send').click(function (e){
 
-//      e.preventDefault();
-
-
-//     let has_errors =false;
-
-//     if( username_input.value == ''){
-
-//         alert("Please enter a username");
-//         has_errors = true;
-//     }
-
-//     if(message_input.value == ''){
-
-//         alert("Please enter a message");
-//         has_errors = true;
-//     }
-
-//     if(has_errors){
-
-//         return;
-//     }
+     e.preventDefault();
 
 
-//     const options = {
+    let has_errors =false;
 
-//         method: 'POST',
-//         url:'/send-message',
+    if( username_input.value == ''){
+
+        alert("Please enter a username");
+        has_errors = true;
+    }
+
+    if(message_input.value == ''){
+
+        alert("Please enter a message");
+        has_errors = true;
+    }
+
+    if(has_errors){
+
+        return;
+    }
+
+
+    const options = {
+
+        method: 'POST',
+        url:'/send-message',
        
-//         data:{
-//             id: user_id.value,
-//             username: username_input.value,
-//             message: message_input.value,
+        data:{
+            id: user_id.value,
+            username: username_input.value,
+            message: message_input.value,
            
 
-//         },
-//         TransformResponse: [(data)=>{
+        },
+        TransformResponse: [(data)=>{
 
-//             return data;
-//         }]
+            return data;
+        }]
 
-//     }
+    }
 
         
-//     axios(options);
+    axios(options);
+    console.log('axios ')
   
-// });
+});
 
 
 window.Echo.channel('chat').listen('.message',(e)=>{
     
-    console.log("test", e);
+    console.log("receive", e);
 
     if(e.id ==user_id.value){
         $('#messages').append(`
