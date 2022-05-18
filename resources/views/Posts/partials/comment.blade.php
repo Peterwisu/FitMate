@@ -13,8 +13,8 @@
         @forelse($post->PostComment as $comment)
             <!----Check if the comment is not replies (0 means is not reply ) --->
             @if ($comment->is_reply == 0)
-                <div class="card mb-4 ">
-                    <div class="card body ">
+                <div class="card  mb-4"style="border: 0px ;background: #F9FAFB;">
+                    <div class="card body " style="border: 0px;background: #F9FAFB;">
                         <div class="row mt-3 mx-2">
                             <div class="col-md-11">
                                 <p class="post_author"> {{ $comment->User->name }} </p>
@@ -145,7 +145,7 @@
                         </div>
 
                     </div>
-                    
+                    <hr>
                 </div>
             @endif
 
@@ -160,8 +160,8 @@
                                 <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
                               </svg>
                         </div>
-                        <div class="card mb-4 col-md-11" style="/**margin-left: 75px !important;**/">
-                            <div class="card body ">
+                        <div class="card mb-4 col-md-11" style="border: 0px;background: #F9FAFB;">
+                            <div class="card body " style="border: 0px;background: #F9FAFB;">
                                 <div class="row mt-3 mx-2">
                                     <div class="col-md-11">
                                         <p class="post_author"> {{ $reply->User->name }} </p>
@@ -249,8 +249,8 @@
                 @empty
 
                     <!----There is no reply-->
-                    <div class="card mb-4 " style="margin-left: 75px !important;">
-                        <div class="card body ">
+                    <div class="card mb-4 " style="margin-left: 75px !important; border: 0px;background: #F9FAFB;" >
+                        <div class="card body " style="border: 0px;background: #F9FAFB;">
                             <div class="d-flex justify-content-between mx-5 mt-4 mb-1">
                                 <div class="d-flex flex-row align-items-center ">
                                     <p class="post_detail">There is no reply for this comment</p>
@@ -265,8 +265,8 @@
 
         @empty
             <!----There is no comment-->
-            <div class="card mb-5 mt-5" id='NoComment'>
-                <div class="card body ">
+            <div class="card mb-5 mt-5" id='NoComment' style="border: 0px;background: #F9FAFB;">
+                <div class="card body " style="border: 0px;background: #F9FAFB;">
                     <div class="d-flex justify-content-between mx-5 mt-5 mb-4">
 
                         <p class="post_detail"> There is no comment on this post </p>

@@ -159,8 +159,8 @@
                         $('#error').remove();
                         // Append New comment
                         $("#loop-comment").append(`
-                        <div class="card mb-4">
-                            <div class="card body ">
+                        <div class="card mb-4" style="border: 0px;background: #F9FAFB;">
+                            <div class="card body " style="border: 0px;background: #F9FAFB;">
                                 <div class="row mt-3 mx-2">
                                     <div class="col-md-11">
                                         <p class="post_author"> ${r.username}</p>
