@@ -78,6 +78,13 @@
                         required>
                 </div>
             </div>
+            <div class="row mt-2 mb-2">
+                <div class="col-md-6">
+                    <label>Weight</label>
+                    <input type="number" placeholder="Your waist in CM" class="form-control" name="waist" id="weight"
+                        required>
+                </div>
+            </div>
            
             <div class="row  mt-5 mb-5">
                 <div class="col-md-12 ">

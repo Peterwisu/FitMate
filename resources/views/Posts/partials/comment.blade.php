@@ -145,7 +145,7 @@
                         </div>
 
                     </div>
-                    <hr>
+                    
                 </div>
             @endif
 
