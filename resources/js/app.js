@@ -69,7 +69,7 @@ $('#message_send').click(function (e){
   
 });
 
-
+// Receive message and display
 window.Echo.channel('chat').listen('.message',(e)=>{
     
     console.log("receive", e);

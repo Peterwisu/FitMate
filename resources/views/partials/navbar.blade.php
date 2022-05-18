@@ -8,7 +8,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto" style="margin-left:auto;">
                 <li class="nav-item">
@@ -33,7 +33,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav" style="margin-left:0;">
+            <ul class="navbar-nav" style="margin-left:0;" >
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('register'))
@@ -54,12 +54,12 @@
                             {{ Auth::user()->name }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" >
 
                             <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">
                                Your Profile
                             </a>
-                            <a class="dropdown-item" href="/health/{{Auth::user()->id}}">
+                            <a class="dropdown-item" href="/health/{{Auth::user()->id}}" >
                                 Your Fitness
                              </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
