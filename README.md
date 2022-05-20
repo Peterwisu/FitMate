@@ -35,7 +35,7 @@ put all required credentials in .env file (Google Map API key,Database,Pusher JS
 
 ### Database migration
 ```bash
-# migrates all table to database
+# migrates all the tables to database
 php artisan migrate
 ```
 
